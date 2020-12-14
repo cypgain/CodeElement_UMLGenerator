@@ -106,7 +106,7 @@ public class UMLGenerator
                 // Ajout des attributs
                 for (Field field : cls.getDeclaredFields())
                 {
-                    entity.addMember(new MemberAttribute(field.getName(), field.getType().getSimpleName(), field.getModifiers()));
+                    entity.addMember(new MemberAttribute(field.getName(), this.parseFieldName(field.getGenericType().getTypeName()), field.getModifiers()));
                 }
 
                 // Ajout des méthodes
@@ -121,12 +121,36 @@ public class UMLGenerator
 
                 this.entities.add(entity);
             }
-
-
         }
         catch (MalformedURLException | ClassNotFoundException e) { e.printStackTrace(); }
 
-        // Definition de l'heritage
+        this.generateExtends();
+        this.generateImplementations();
+        this.assignAssociations();
+    }
+
+    private String parseFieldName(String fieldName)
+    {
+        if (fieldName.contains("<"))
+        {
+            String[] splitted = fieldName.split("<");
+            if (splitted.length < 2)
+                return fieldName;
+
+            splitted[0] = splitted[0].replaceAll("^.+[.]", "");
+            splitted[1] = splitted[1].replaceAll("^.+[.]", "");
+            fieldName = splitted[0] + "<" + splitted[1];
+        }
+        else
+        {
+            fieldName = fieldName.replaceAll("^.+[.]", "");
+        }
+
+        return fieldName;
+    }
+
+    private void generateExtends()
+    {
         for(Entity entity : this.entities)
         {
             if(entity.getSuperClass().equalsIgnoreCase(""))
@@ -139,8 +163,10 @@ public class UMLGenerator
                 break;
             }
         }
+    }
 
-        // Definition de l'implementation
+    private void generateImplementations()
+    {
         for(Entity entity : this.entities)
         {
             if(entity.getSuperClass().equalsIgnoreCase(""))
@@ -158,6 +184,33 @@ public class UMLGenerator
         }
     }
 
+    private void assignAssociations()
+    {
+        for(Entity e : this.entities)
+        {
+            for(MemberAttribute m : e.getMemberAttributeList())
+            {
+                char c = '1';
+                String type;
+                if(m.getType().contains("[]"))
+                {
+                    c = '*';
+                    type = m.getType().substring(0, m.getType().length() - 2);
+                }
+                else
+                {
+                    type = m.getType();
+                }
+                for(Entity e2 : this.entities)
+                {
+                    if(e2.getName().equals(type))
+                    {
+                        this.relations.add(new RelationAssociation(e, e2, '0', c));
+                    }
+                }
+            }
+        }
+    }
 
     private Entity getEntity(String name)
     {

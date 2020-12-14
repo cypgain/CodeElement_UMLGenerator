@@ -38,6 +38,16 @@ public class Entity
         return this.implementations;
     }
 
+    public List<MemberAttribute> getMemberAttributeList()
+    {
+        List<MemberAttribute> res = new ArrayList<>();
+        for(Member m : this.members)
+            if(m instanceof MemberAttribute)
+                res.add((MemberAttribute)m);
+
+        return res;
+    }
+
     public void addMember(Member m)
     {
         this.members.add(m);

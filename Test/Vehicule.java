@@ -4,6 +4,8 @@
 	* @version 	: 1.0
 */
 
+import java.util.List;
+
 public class Vehicule
 {
 	/*--------------------*/
@@ -15,6 +17,9 @@ public class Vehicule
 	public static final String couleurTest = "e";
 	private static final String couleurTest1 = "e";
 	protected static final String couleurTest2 = "e";
+
+	private List<String> testList;
+
 	/**
 		* Constructeur Vehicule
 		* @param couleur : la couleur du véhicule.

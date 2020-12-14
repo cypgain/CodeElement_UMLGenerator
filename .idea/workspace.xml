@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc0d5acd-e4ac-4115-823c-84ee36c615cb" name="Default Changelist" comment="" />
+    <list default="true" id="fc0d5acd-e4ac-4115-823c-84ee36c615cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bateau.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Train.class" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Train.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Vehicule.class" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Vehicule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Vehicule.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Vehicule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/GenerationType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/GenerationType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/UMLGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/UMLGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/EntityType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/EntityType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberVisibility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberVisibility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/utils/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/utils/StringUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Bateau.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Bateau.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Train.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Train.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Vehicule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Vehicule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/UMLGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/UMLGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Relation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/RelationAssociation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/RelationAssociation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +84,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -69,11 +97,38 @@
       <updated>1607930265829</updated>
       <workItem from="1607930268827" duration="8227000" />
       <workItem from="1607938518769" duration="2926000" />
+      <workItem from="1607960574911" duration="2203000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607961642149">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607961642149" />
+    <state x="803" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1607960584094">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="803" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607960584094" />
+    <state width="1877" height="388" key="GridCell.Tab.0.bottom" timestamp="1607962796652">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607962796652" />
+    <state width="1877" height="388" key="GridCell.Tab.0.center" timestamp="1607962796652">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="388" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607962796652" />
+    <state width="1877" height="388" key="GridCell.Tab.0.left" timestamp="1607962796652">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="388" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607962796652" />
+    <state width="1877" height="388" key="GridCell.Tab.0.right" timestamp="1607962796652">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="388" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607962796652" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

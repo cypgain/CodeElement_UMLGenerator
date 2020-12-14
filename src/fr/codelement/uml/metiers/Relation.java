@@ -2,8 +2,8 @@ package fr.codelement.uml.metiers;
 
 public class Relation 
 {
-    private Entity entity1;
-    private Entity entity2;
+    protected Entity entity1;
+    protected Entity entity2;
     private RelationType type;
     
     public Relation(Entity entity1, Entity entity2, RelationType type)

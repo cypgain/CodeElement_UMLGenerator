@@ -19,6 +19,11 @@ public abstract class Member
     protected abstract boolean isStatic(int visibility);
     protected abstract MemberVisibility getMemberVisibility(int visibility);
 
+    public String getType()
+    {
+        return this.type;
+    }
+
     public String toString()
     {
         String str = "";

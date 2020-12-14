@@ -21,4 +21,6 @@ public class MemberAttribute extends Member
         return visibility == 1 ? MemberVisibility.PUBLIC : visibility == 2 ? MemberVisibility.PRIVATE : MemberVisibility.PROTECTED;
     }
 
+
+
 }
