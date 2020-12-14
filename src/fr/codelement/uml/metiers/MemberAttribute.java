@@ -2,10 +2,12 @@ package fr.codelement.uml.metiers;
 
 public class MemberAttribute extends Member
 {
+    private Relation association
 
     public MemberAttribute(String name, String type, int visibility)
     {
         super(name, type, visibility);
+        this.association = null;
     }
 
     @Override
@@ -21,4 +23,8 @@ public class MemberAttribute extends Member
         return visibility == 1 ? MemberVisibility.PUBLIC : visibility == 2 ? MemberVisibility.PRIVATE : MemberVisibility.PROTECTED;
     }
 
+    public void addRelation(Entity classe)
+    {
+        this.association = new Relation(this, classe);
+    }
 }
