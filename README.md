@@ -1,6 +1,21 @@
-Pour compiler:
+# Application de Rétroconception JAVA vers UML
 
-1. Se mettre dans le repertoire racine
-2. Faire javac "@compile.list"
-3. Se mettre dans le repertoire src
-4. Faire java fr.codelement.uml.UMLGenerator
+*author*  : Code Element
+
+*date*    : 14/12/2020
+
+*version* : 0.1    
+
+##### Pour compiler l'application :
+
+1. Veuillez-vous rendre dans le répertoire racine de l'application
+2. Faire `javac "@compile.list"`
+
+##### Pour éxécuter l'application :  
+
+3. Veuillez-vous rendre dans le répertoire src
+4. Veuillez éxécuter la commande suivante : `java fr.codelement.uml.UMLGenerator`
+
+##### Pour la documention de l'application :
+
+5. Pour lire la documention, veuillez taper la commande suivante : javadoc `@javadoc.list`
