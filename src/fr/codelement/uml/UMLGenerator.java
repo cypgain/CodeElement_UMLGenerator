@@ -195,7 +195,12 @@ public class UMLGenerator
                 if(m.getType().contains("[]"))
                 {
                     c = '*';
-                    type = m.getType().substring(0, m.getType().length() - 2);
+                    type = m.getType().substring(0, m.getType().indexOf("["));
+                }
+                else if(m.getType().contains("<"))
+                {
+                    c = '*';
+                    type = m.getType().substring(m.getType().indexOf("<")+1, m.getType().length()-1);
                 }
                 else
                 {

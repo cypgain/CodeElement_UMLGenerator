@@ -4,6 +4,7 @@
 	* @version 	: 1.0
 */
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Vehicule
@@ -18,7 +19,9 @@ public class Vehicule
 	private static final String couleurTest1 = "e";
 	protected static final String couleurTest2 = "e";
 
-	private List<String> testList;
+	private Voiture[] testTab;
+	private List<Voiture> testList;
+	private ArrayList<Voiture> testArrayList;
 
 	/**
 		* Constructeur Vehicule
