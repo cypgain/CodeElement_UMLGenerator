@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc0d5acd-e4ac-4115-823c-84ee36c615cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Test/Voiture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/UMLGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/UMLGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/GenerationType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/UMLGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/EntityType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Member.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberAttribute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberVisibility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/utils/StringUtils.class" beforeDir="false" />
-    </list>
+    <list default="true" id="fc0d5acd-e4ac-4115-823c-84ee36c615cb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +22,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -44,6 +29,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
@@ -67,6 +56,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -84,59 +74,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="422" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607940476630">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="422" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607940476630" />
-    <state x="693" y="359" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1607941109979">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="693" y="359" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607941109979" />
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1607939394929">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607939394929" />
-    <state width="1877" height="326" key="GridCell.Tab.0.bottom" timestamp="1607950614640">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614640" />
-    <state width="1877" height="326" key="GridCell.Tab.0.center" timestamp="1607950614640">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614640" />
-    <state width="1877" height="326" key="GridCell.Tab.0.left" timestamp="1607950614640">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614640" />
-    <state width="1877" height="326" key="GridCell.Tab.0.right" timestamp="1607950614640">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614640" />
-    <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1607950614641">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614641" />
-    <state width="1877" height="326" key="GridCell.Tab.1.center" timestamp="1607950614640">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614640" />
-    <state width="1877" height="326" key="GridCell.Tab.1.left" timestamp="1607950614640">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614640" />
-    <state width="1877" height="326" key="GridCell.Tab.1.right" timestamp="1607950614641">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607950614641" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1607938504522">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607938504522" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1607933193127">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607933193127" />
   </component>
 </project>

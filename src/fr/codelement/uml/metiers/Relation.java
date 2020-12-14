@@ -2,13 +2,13 @@ package fr.codelement.uml.metiers;
 
 public class Relation 
 {
-    private Entity class;
-    private Entity classBis;
+    private Entity entity1;
+    private Entity entity2;
     
-    public Relation(Entity classe, Entity classeBis)
+    public Relation(Entity entity1, Entity entity2)
     {
-        this.classe = classe;
-        this.classeBis = classeBis;
+        this.entity1 = entity1;
+        this.entity2 = entity2;
     }
 
 
