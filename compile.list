@@ -12,3 +12,5 @@
 ./src/fr/codelement/uml/metiers/MemberMethod.java
 ./src/fr/codelement/uml/metiers/MemberVisibility.java
 ./src/fr/codelement/uml/metiers/Relation.java
+./src/fr/codelement/uml/metiers/RelationType.java
+./src/fr/codelement/uml/metiers/RelationAssociation.java
