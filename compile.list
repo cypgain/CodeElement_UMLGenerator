@@ -1,4 +1,4 @@
--encoding utf8
+-encoding utf8 -parameters
 
 ./src/fr/codelement/uml/UMLGenerator.java
 ./src/fr/codelement/uml/GenerationType.java
@@ -11,3 +11,7 @@
 ./src/fr/codelement/uml/metiers/MemberAttribute.java
 ./src/fr/codelement/uml/metiers/MemberMethod.java
 ./src/fr/codelement/uml/metiers/MemberVisibility.java
+
+./src/Test/Bateau.java
+./src/Test/Train.java
+./src/Test/Vehicule.java
