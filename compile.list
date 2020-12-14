@@ -1,0 +1,13 @@
+-encoding utf8
+
+./src/fr/codelement/uml/UMLGenerator.java
+./src/fr/codelement/uml/GenerationType.java
+
+./src/fr/codelement/uml/utils/StringUtils.java
+
+./src/fr/codelement/uml/metiers/Entity.java
+./src/fr/codelement/uml/metiers/EntityType.java
+./src/fr/codelement/uml/metiers/Member.java
+./src/fr/codelement/uml/metiers/MemberAttribute.java
+./src/fr/codelement/uml/metiers/MemberMethod.java
+./src/fr/codelement/uml/metiers/MemberVisibility.java
