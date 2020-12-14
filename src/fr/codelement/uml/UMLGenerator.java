@@ -4,6 +4,7 @@ import fr.codelement.uml.metiers.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -19,11 +20,13 @@ public class UMLGenerator
     private GenerationType generationType;
     private File sourceFile;
     private List<Entity> entities;
+    private List<Relation> relations;
 
     public UMLGenerator(String source)
     {
         this.sourceFile = new File(source);
         this.entities = new ArrayList<>();
+        this.relations = new ArrayList<>();
 
         if (!this.sourceFile.exists())
         {
@@ -89,8 +92,16 @@ public class UMLGenerator
             {
                 Class cls = cl.loadClass(p);
 
+
                 // Creation de l'entité
-                Entity entity = new Entity(cls.getSimpleName(), this.getEntityType(cls));
+                EntityType entityType = this.getEntityType(cls);
+                Entity entity = new Entity(cls.getSimpleName(), entityType, entityType == EntityType.CLASS ? cls.getSuperclass().getSimpleName() : "");
+
+
+                for(AnnotatedType inter : cls.getAnnotatedInterfaces())
+                {
+                    entity.addImplementation(inter.getType().getTypeName());
+                }
 
                 // Ajout des attributs
                 for (Field field : cls.getDeclaredFields())
@@ -114,7 +125,49 @@ public class UMLGenerator
 
         }
         catch (MalformedURLException | ClassNotFoundException e) { e.printStackTrace(); }
+
+        // Definition de l'heritage
+        for(Entity entity : this.entities)
+        {
+            if(entity.getSuperClass().equalsIgnoreCase(""))
+                continue;
+
+            Entity e = this.getEntity(entity.getSuperClass());
+            if(e != null)
+            {
+                this.relations.add(new Relation(entity, e, RelationType.EXTEND));
+                break;
+            }
+        }
+
+        // Definition de l'implementation
+        for(Entity entity : this.entities)
+        {
+            if(entity.getSuperClass().equalsIgnoreCase(""))
+                continue;
+
+            for(String implementation : entity.getImplementations())
+            {
+                Entity e = this.getEntity(implementation);
+
+                if(e != null)
+                {
+                    this.relations.add(new Relation(entity, e, RelationType.IMPLEMENT));
+                }
+            }
+        }
     }
+
+
+    private Entity getEntity(String name)
+    {
+        for(Entity entity : this.entities)
+            if(entity.getName().equalsIgnoreCase(name))
+                return entity;
+
+        return null;
+    }
+
 
     private List<String> getFilesGenerate()
     {
@@ -150,6 +203,12 @@ public class UMLGenerator
             System.out.println(e);
     }
 
+    public void printRelations()
+    {
+        for(Relation r : this.relations)
+            System.out.println(r);
+    }
+
     private MemberVisibility getMemberVisibility(int modifier)
     {
         return modifier == 1 ? MemberVisibility.PUBLIC : modifier == 2 ? MemberVisibility.PRIVATE : MemberVisibility.PROTECTED;
@@ -176,6 +235,7 @@ public class UMLGenerator
         UMLGenerator generator = new UMLGenerator(args[0]);
         generator.generate();
         generator.printEntities();
+        generator.printRelations();
     }
 
 }
