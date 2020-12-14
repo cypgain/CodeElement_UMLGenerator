@@ -4,11 +4,18 @@ public class Relation
 {
     private Entity entity1;
     private Entity entity2;
+    private RelationType type;
     
-    public Relation(Entity entity1, Entity entity2)
+    public Relation(Entity entity1, Entity entity2, RelationType type)
     {
         this.entity1 = entity1;
         this.entity2 = entity2;
+        this.type = type;
+    }
+
+    public String toString()
+    {
+        return entity1.getName() + " " + (type == RelationType.EXTEND ? "herite de" : "implemente") + " " + entity2.getName();
     }
 
 
