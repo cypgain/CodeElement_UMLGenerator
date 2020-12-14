@@ -83,28 +83,7 @@ public class UMLGenerator
             URL[] urls = new URL[] { url };
             ClassLoader cl = new URLClassLoader(urls);
 
-            List<String> filesGenerate = new ArrayList<>();
-
-            if (this.generationType == GenerationType.FILE)
-            {
-                filesGenerate.add(this.parseFileName(this.sourceFile.getName()));
-            }
-            else
-            {
-                String[] files = this.sourceFile.list();
-
-                if (files == null)
-                {
-                    System.out.println("Il n'y a aucun fichiers dans le dossier selectionné");
-                    return;
-                }
-
-                for (int i = 0; i < files.length; i++)
-                {
-                    if (files[i].contains(".class"))
-                        filesGenerate.add(this.parseFileName(files[i]));
-                }
-            }
+            List<String> filesGenerate = this.getFilesGenerate();
 
             for (String p : filesGenerate)
             {
@@ -135,6 +114,34 @@ public class UMLGenerator
 
         }
         catch (MalformedURLException | ClassNotFoundException e) { e.printStackTrace(); }
+    }
+
+    private List<String> getFilesGenerate()
+    {
+        List<String> filesGenerate = new ArrayList<>();
+
+        if (this.generationType == GenerationType.FILE)
+        {
+            filesGenerate.add(this.parseFileName(this.sourceFile.getName()));
+        }
+        else
+        {
+            String[] files = this.sourceFile.list();
+
+            if (files == null)
+            {
+                System.out.println("Il n'y a aucun fichiers dans le dossier selectionné");
+                return filesGenerate;
+            }
+
+            for (int i = 0; i < files.length; i++)
+            {
+                if (files[i].contains(".class"))
+                    filesGenerate.add(this.parseFileName(files[i]));
+            }
+        }
+
+        return filesGenerate;
     }
 
     public void printEntities()
