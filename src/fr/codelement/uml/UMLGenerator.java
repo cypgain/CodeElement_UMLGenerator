@@ -47,7 +47,7 @@ public class UMLGenerator
         if (this.generationType == GenerationType.FOLDER)
         {
             System.out.println("Compilation du contenu du dossier " + this.sourceFile.getName());
-            cmd = String.format("javac %s/*.java", this.sourceFile.getName());
+            cmd = String.format("javac -parameters %s/*.java", this.sourceFile.getName());
         }
         else if (this.isJavaFile())
         {
@@ -55,7 +55,7 @@ public class UMLGenerator
                 return;
 
             System.out.println("Compilation du fichier " + this.sourceFile.getPath());
-            cmd = String.format("javac %s", this.sourceFile.getPath());
+            cmd = String.format("javac -parameters %s", this.sourceFile.getPath());
         }
         else
         {
