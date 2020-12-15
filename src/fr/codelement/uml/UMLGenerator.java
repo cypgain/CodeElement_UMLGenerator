@@ -105,18 +105,6 @@ public class UMLGenerator
             this.config.loadConfig();
     }
 
-    public void printEntities()
-    {
-        for (Entity e : this.entities)
-            System.out.println(e);
-    }
-
-    public void printRelations()
-    {
-        for(Relation r : this.relations)
-            if(r.isShow()) System.out.println(r + "\n");
-    }
-
     public Entity getEntity(String name)
     {
         for(Entity entity : this.entities)
@@ -132,6 +120,17 @@ public class UMLGenerator
         {
             if (relation instanceof RelationAssociation && relation.isShow() && ((relation.getEntity1() == entity1 && relation.getEntity2() == entity2) || (relation.getEntity1() == entity2 && relation.getEntity2() == entity1)))
                 return relation;
+        }
+
+        return null;
+    }
+
+    public RelationAssociationBi getAssociationBi(Entity e1, Entity e2)
+    {
+        for (RelationAssociationBi bi : this.relationsAssocBi)
+        {
+            if (bi.isShow() && ((bi.getR1().getEntity1() == e1 && bi.getR1().getEntity2() == e2) || (bi.getR1().getEntity1() == e2 && bi.getR1().getEntity2() == e1)))
+                return bi;
         }
 
         return null;
@@ -308,7 +307,7 @@ public class UMLGenerator
             if(r.isShow()) System.out.println(r + "\n");
         
         for(RelationAssociationBi r2 : this.relationsAssocBi)
-            System.out.println(r2 + "\n");
+            if(r2.isShow()) System.out.println(r2 + "\n");
     }
 
     private MemberVisibility getMemberVisibility(int modifier)

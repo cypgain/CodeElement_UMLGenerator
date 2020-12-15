@@ -15,16 +15,6 @@ public class Relation
         this.show = true;
     }
 
-    public Entity getEntity1()
-    {
-        return this.entity1;
-    }
-
-    public Entity getEntity2()
-    {
-        return this.entity2;
-    }
-
     public void setShow(boolean show)
     {
         this.show = show;

@@ -3,6 +3,7 @@ package fr.codelement.uml;
 import fr.codelement.uml.metiers.Entity;
 import fr.codelement.uml.metiers.Member;
 import fr.codelement.uml.metiers.Relation;
+import fr.codelement.uml.metiers.RelationAssociationBi;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -128,7 +129,15 @@ public class Config
 
                             if (relation == null)
                             {
-                                System.out.println(err + " : la relation n'existe pas");
+                                RelationAssociationBi assoBi = this.umlGenerator.getAssociationBi(entity, entity2);
+
+                                if (assoBi == null)
+                                {
+                                    System.out.println(err + " : impossible de trouver la relation");
+                                    return;
+                                }
+
+                                assoBi.setShow(false);
                                 return;
                             }
 
