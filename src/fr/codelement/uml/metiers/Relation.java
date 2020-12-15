@@ -13,6 +13,16 @@ public class Relation
         this.type = type;
     }
 
+    public Entity getEntity1()
+    {
+        return this.entity1;
+    }
+
+    public Entity getEntity2()
+    {
+        return this.entity2;
+    }
+
     public String toString()
     {
         return entity1.getName() + " " + (type == RelationType.EXTEND ? "herite de" : "implemente") + " " + entity2.getName();
