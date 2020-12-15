@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc0d5acd-e4ac-4115-823c-84ee36c615cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Test/Actions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/Actions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile.list" beforeDir="false" afterPath="$PROJECT_DIR$/compile.list" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/UMLGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/UMLGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/MemberMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/Bateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/EntityType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.1/fr/codelement/uml/metiers/EntityType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/UMLGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/UMLGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/EntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/EntityType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/MemberAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/Relation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/RelationAssociation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/metiers/RelationAssociation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.config" beforeDir="false" afterPath="$PROJECT_DIR$/test.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -44,7 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Test" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -52,6 +53,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\University\Projet Tutoré\Programmation\UMLGenerator0.1\Test" />
       <recent name="D:\University\Projet Tutoré\Programmation\UMLGenerator0.1" />
     </key>
   </component>
@@ -91,7 +93,7 @@
       <workItem from="1607938518769" duration="2926000" />
       <workItem from="1607960574911" duration="3130000" />
       <workItem from="1607964205817" duration="158000" />
-      <workItem from="1608016957895" duration="4624000" />
+      <workItem from="1608016957895" duration="7479000" />
     </task>
     <task id="LOCAL-00001" summary="feat: parameters system">
       <created>1608017840495</created>
@@ -123,22 +125,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="527" y="22" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608017839259" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1608021541521">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1608025660625">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608021541521" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1608021541521">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025660625" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1608025660625">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608021541521" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1608021541521">
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025660625" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1608025660625">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608021541521" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1608021541521">
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025660625" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1608025660625">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608021541521" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025660625" />
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1608025423466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025423466" />
+    <state width="1877" height="326" key="GridCell.Tab.1.center" timestamp="1608025423466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025423465" />
+    <state width="1877" height="326" key="GridCell.Tab.1.left" timestamp="1608025423465">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025423465" />
+    <state width="1877" height="326" key="GridCell.Tab.1.right" timestamp="1608025423466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025423466" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1608023958023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608023958023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -15,6 +15,7 @@ public class RelationAssociation extends Relation
     @Override
     public String toString()
     {
+        if(!this.show) return "";
         return "Association : unidirectionnelle\n\t" + this.entity1.getName() + " 1..1 -------> " + this.cardMin + ".." + this.cardMax + " " + this.entity2.getName();
     }
 }

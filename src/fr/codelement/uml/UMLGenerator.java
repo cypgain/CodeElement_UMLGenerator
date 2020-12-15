@@ -88,8 +88,6 @@ public class UMLGenerator
 
                     for (Parameter param : method.getParameters())
                         memberMethod.addArgument(param);
-
-                    System.out.println(memberMethod.getSignature());
                 }
 
                 this.entities.add(entity);
@@ -114,7 +112,7 @@ public class UMLGenerator
     public void printRelations()
     {
         for(Relation r : this.relations)
-            System.out.println(r + "\n");
+            if(r.isShow()) System.out.println(r + "\n");
     }
 
     public Entity getEntity(String name)
@@ -122,6 +120,17 @@ public class UMLGenerator
         for(Entity entity : this.entities)
             if(entity.getName().equalsIgnoreCase(name))
                 return entity;
+
+        return null;
+    }
+
+    public Relation getRelation(Entity entity1, Entity entity2)
+    {
+        for (Relation relation : this.relations)
+        {
+            if (relation instanceof RelationAssociation && relation.isShow() && ((relation.getEntity1() == entity1 && relation.getEntity2() == entity2) || (relation.getEntity1() == entity2 && relation.getEntity2() == entity1)))
+                return relation;
+        }
 
         return null;
     }

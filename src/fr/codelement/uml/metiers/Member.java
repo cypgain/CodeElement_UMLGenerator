@@ -50,7 +50,7 @@ public abstract class Member
 
     public String toString(int maxW)
     {
-        if(!this.show)return "";
+        if(!this.show) return "";
         String str = "";
 
         str += this.visibility.getSymbol() + " " + this.name;
