@@ -65,7 +65,6 @@ public class UMLGenerator
             {
                 Class cls = cl.loadClass(p);
 
-
                 // Creation de l'entité
                 EntityType entityType = this.getEntityType(cls);
                 Entity entity = new Entity(cls.getSimpleName(), entityType, entityType == EntityType.CLASS ? cls.getSuperclass().getSimpleName() : "");
@@ -80,6 +79,13 @@ public class UMLGenerator
                 for (Field field : cls.getDeclaredFields())
                 {
                     entity.addMember(new MemberAttribute(field.getName(), StringUtils.parseFieldName(field.getGenericType().getTypeName()), field.getModifiers()));
+                }
+
+                // Ajout des constantes d'énumeration
+                if (cls.isEnum())
+                {
+                    for (Object obj : cls.getEnumConstants())
+                        entity.addEnumConstant(new EnumConstantMember("" + obj));
                 }
 
                 // Ajout des méthodes

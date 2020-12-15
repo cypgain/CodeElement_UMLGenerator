@@ -11,6 +11,7 @@ public class Entity
     private String name;
     private EntityType type;
     private List<Member> members;
+    private List<EnumConstantMember> enumConstantMembers;
     private String superClass;
     private List<String> implementations;
 
@@ -19,8 +20,14 @@ public class Entity
         this.name = name;
         this.type = type;
         this.members = new ArrayList<>();
+        this.enumConstantMembers = new ArrayList<>();
         this.superClass = superClass;
         this.implementations = new ArrayList<>();
+    }
+
+    public void addEnumConstant(EnumConstantMember member)
+    {
+        this.enumConstantMembers.add(member);
     }
 
     public String getSuperClass()
@@ -134,6 +141,11 @@ public class Entity
                     str += m.toString(maxWitdh) + "\n";
         }
         str += sep;
+        for (EnumConstantMember m : this.enumConstantMembers)
+        {
+            str += m + "\n";
+        }
+
         for (Member m : this.members)
         {
             if (m instanceof MemberMethod)
