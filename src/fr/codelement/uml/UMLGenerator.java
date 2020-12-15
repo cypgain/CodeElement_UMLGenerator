@@ -210,6 +210,7 @@ public class UMLGenerator
                 {
                     if(e2.getName().equals(type))
                     {
+                        m.setShow(false);
                         this.relations.add(new RelationAssociation(e, e2, '0', c));
                     }
                 }
@@ -264,7 +265,7 @@ public class UMLGenerator
     public void printRelations()
     {
         for(Relation r : this.relations)
-            System.out.println(r);
+            System.out.println(r + "\n");
     }
 
     private MemberVisibility getMemberVisibility(int modifier)

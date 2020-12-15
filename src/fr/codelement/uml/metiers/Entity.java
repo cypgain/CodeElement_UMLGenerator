@@ -58,28 +58,44 @@ public class Entity
         this.implementations.add(i);
     }
 
+    public int getMaxWitdh()
+    {
+        int res = 0;
+        for (Member m : this.members)
+        {
+            if(m.getWitdh() > res)res = m.getWitdh();
+        }
+        return res;
+    }
+
     public String toString()
     {
         String str = "";
-        String sep = "------------------------------------------------\n";
+        int maxWitdh = this.getMaxWitdh()+1;
+        String sep = "";
+        for(int witdh = 0; witdh < maxWitdh+10; witdh++)
+            sep += "-";
+
+        sep += "\n";
 
         str += sep;
-        str += StringUtils.center(this.name, 48);
+        str += StringUtils.center(this.name, maxWitdh+10);
         str += "\n";
         str += sep;
         for (Member m : this.members)
         {
             if (m instanceof MemberAttribute)
-                str += m + "\n";
+                if(!(m.toString().isEmpty()))
+                    str += m.toString(maxWitdh) + "\n";
         }
         str += sep;
         for (Member m : this.members)
         {
             if (m instanceof MemberMethod)
-                str += m + "\n";
+                if(!(m.toString().isEmpty()))
+                    str += m.toString(maxWitdh) + "\n";
         }
         str += sep;
         return str;
     }
-
 }
