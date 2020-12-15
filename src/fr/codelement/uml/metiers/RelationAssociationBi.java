@@ -13,6 +13,11 @@ public class RelationAssociationBi
 
     public String toString()
     {
-        return "Association : bidirectionnelle\n\t" + r1.getEntity1().getName() + " " + r2.getCardMin() + ".." + r2.getCardMax() + " <-------> " + r1.getCardMin() + ".." + r1.getCardMax() + " " + r2.getEntity1().getName();
+        String type = "bidirectionnelle";
+
+        if(r1.getEntity1().getName().equals(r2.getEntity1().getName()))
+            type = "reflexive";
+
+        return "Association : " + type + "\n\t" + r1.getEntity1().getName() + " " + r2.getCardMin() + ".." + r2.getCardMax() + " <-------> " + r1.getCardMin() + ".." + r1.getCardMax() + " " + r2.getEntity1().getName();
     }
 }
