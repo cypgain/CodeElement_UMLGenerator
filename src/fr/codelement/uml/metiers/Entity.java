@@ -70,13 +70,15 @@ public class Entity
         for (Member m : this.members)
         {
             if (m instanceof MemberAttribute)
-                str += m + "\n";
+                if(!(m.toString().isEmpty()))
+                    str += m + "\n";
         }
         str += sep;
         for (Member m : this.members)
         {
             if (m instanceof MemberMethod)
-                str += m + "\n";
+                if(!(m.toString().isEmpty()))
+                    str += m + "\n";
         }
         str += sep;
         return str;

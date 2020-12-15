@@ -7,6 +7,7 @@ public abstract class Member
     protected String type;
     protected MemberVisibility visibility;
     protected boolean isStatic;
+    protected boolean show;
 
     public Member(String name, String type, int visibility)
     {
@@ -14,6 +15,7 @@ public abstract class Member
         this.type = type;
         this.isStatic = this.isStatic(visibility);
         this.visibility = this.getMemberVisibility(visibility);
+        this.show = true;
     }
 
     protected abstract boolean isStatic(int visibility);
@@ -24,8 +26,14 @@ public abstract class Member
         return this.type;
     }
 
+    public void setShow(boolean b)
+    {
+        this.show = b;
+    }
+
     public String toString()
     {
+        if(!this.show)return "";
         String str = "";
 
         if (this.isStatic)

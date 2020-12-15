@@ -210,6 +210,7 @@ public class UMLGenerator
                 {
                     if(e2.getName().equals(type))
                     {
+                        m.setShow(false);
                         this.relations.add(new RelationAssociation(e, e2, '0', c));
                     }
                 }

@@ -36,6 +36,7 @@ public class MemberMethod extends Member
 
     public String toString()
     {
+        if(!this.show)return "";
         String str = "";
 
         if (this.isStatic)
