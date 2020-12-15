@@ -48,6 +48,46 @@ public class Entity
         return res;
     }
 
+    public void hideAllAttributes()
+    {
+        for (Member member : this.members)
+        {
+            if (member instanceof MemberAttribute)
+                member.setShow(false);
+        }
+    }
+
+    public void hideAllMethods()
+    {
+        for (Member member : this.members)
+        {
+            if (member instanceof MemberMethod)
+                member.setShow(false);
+        }
+    }
+
+    public Member getMemberBySignature(String signature)
+    {
+        for (Member member : this.members)
+        {
+            if (member instanceof MemberMethod && ((MemberMethod) member).getSignature().equalsIgnoreCase(signature))
+                return member;
+        }
+
+        return null;
+    }
+
+    public Member getMember(String name)
+    {
+        for (Member member : this.members)
+        {
+            if (member.getName().equalsIgnoreCase(name))
+                return member;
+        }
+
+        return null;
+    }
+
     public void addMember(Member m)
     {
         this.members.add(m);
@@ -79,6 +119,11 @@ public class Entity
         sep += "\n";
 
         str += sep;
+        if (this.type != EntityType.CLASS)
+        {
+            str += StringUtils.center(this.type.getLabel(), maxWitdh + 10);
+            str += "\n";
+        }
         str += StringUtils.center(this.name, maxWitdh+10);
         str += "\n";
         str += sep;

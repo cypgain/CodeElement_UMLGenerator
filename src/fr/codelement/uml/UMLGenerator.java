@@ -1,6 +1,7 @@
 package fr.codelement.uml;
 
 import fr.codelement.uml.metiers.*;
+import fr.codelement.uml.utils.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,14 +22,18 @@ public class UMLGenerator
     private File sourceFile;
     private List<Entity> entities;
     private List<Relation> relations;
+    private Config config;
     private List<RelationAssociationBi> relationsAssocBi;
 
-    public UMLGenerator(String source)
+    public UMLGenerator(String source, String configFileName)
     {
         this.sourceFile = new File(source);
         this.entities = new ArrayList<>();
         this.relations = new ArrayList<>();
         this.relationsAssocBi = new ArrayList<>();
+
+        if (!configFileName.equalsIgnoreCase(""))
+            this.config = new Config(configFileName, this);
 
         if (!this.sourceFile.exists())
         {
@@ -38,40 +43,6 @@ public class UMLGenerator
         }
 
         this.generationType = (this.sourceFile.isDirectory()) ? GenerationType.FOLDER : GenerationType.FILE;
-    }
-
-    private boolean isJavaFile()
-    {
-        return this.sourceFile.getName().contains(".java") || this.sourceFile.getName().contains(".class");
-    }
-
-    private void compile()
-    {
-        String cmd;
-        if (this.generationType == GenerationType.FOLDER)
-        {
-            System.out.println("Compilation du contenu du dossier " + this.sourceFile.getName());
-            cmd = String.format("javac -parameters %s/*.java", this.sourceFile.getName());
-        }
-        else if (this.isJavaFile())
-        {
-            if (this.sourceFile.getName().contains(".class"))
-                return;
-
-            System.out.println("Compilation du fichier " + this.sourceFile.getPath());
-            cmd = String.format("javac -parameters %s", this.sourceFile.getPath());
-        }
-        else
-        {
-            System.out.println("Le fichier que vous avez spécifié n'est pas un .class ou un .java");
-            return;
-        }
-
-        try
-        {
-            Process p = Runtime.getRuntime().exec(cmd);
-            p.waitFor();
-        } catch (IOException | InterruptedException e) { e.printStackTrace(); }
     }
 
     public void generate()
@@ -108,13 +79,13 @@ public class UMLGenerator
                 // Ajout des attributs
                 for (Field field : cls.getDeclaredFields())
                 {
-                    entity.addMember(new MemberAttribute(field.getName(), this.parseFieldName(field.getGenericType().getTypeName()), field.getModifiers()));
+                    entity.addMember(new MemberAttribute(field.getName(), StringUtils.parseFieldName(field.getGenericType().getTypeName()), field.getModifiers()));
                 }
 
                 // Ajout des méthodes
                 for (Method method : cls.getDeclaredMethods())
                 {
-                    MemberMethod memberMethod = new MemberMethod(method.getName(), method.getReturnType().getSimpleName(), method.getModifiers());
+                    MemberMethod memberMethod = new MemberMethod(method.getName(), StringUtils.parseFieldName(method.getReturnType().getTypeName()), method.getModifiers());
                     entity.addMember(memberMethod);
 
                     for (Parameter param : method.getParameters())
@@ -129,26 +100,75 @@ public class UMLGenerator
         this.generateExtends();
         this.generateImplementations();
         this.assignAssociations();
+
+        if (this.config != null)
+            this.config.loadConfig();
     }
 
-    private String parseFieldName(String fieldName)
+    public void printEntities()
     {
-        if (fieldName.contains("<"))
-        {
-            String[] splitted = fieldName.split("<");
-            if (splitted.length < 2)
-                return fieldName;
+        for (Entity e : this.entities)
+            System.out.println(e);
+    }
 
-            splitted[0] = splitted[0].replaceAll("^.+[.]", "");
-            splitted[1] = splitted[1].replaceAll("^.+[.]", "");
-            fieldName = splitted[0] + "<" + splitted[1];
+    public void printRelations()
+    {
+        for(Relation r : this.relations)
+            if(r.isShow()) System.out.println(r + "\n");
+    }
+
+    public Entity getEntity(String name)
+    {
+        for(Entity entity : this.entities)
+            if(entity.getName().equalsIgnoreCase(name))
+                return entity;
+
+        return null;
+    }
+
+    public Relation getRelation(Entity entity1, Entity entity2)
+    {
+        for (Relation relation : this.relations)
+        {
+            if (relation instanceof RelationAssociation && relation.isShow() && ((relation.getEntity1() == entity1 && relation.getEntity2() == entity2) || (relation.getEntity1() == entity2 && relation.getEntity2() == entity1)))
+                return relation;
+        }
+
+        return null;
+    }
+
+    private boolean isJavaFile()
+    {
+        return this.sourceFile.getName().contains(".java") || this.sourceFile.getName().contains(".class");
+    }
+
+    private void compile()
+    {
+        String cmd;
+        if (this.generationType == GenerationType.FOLDER)
+        {
+            System.out.println("Compilation du contenu du dossier " + this.sourceFile.getName());
+            cmd = String.format("javac -parameters %s/*.java", this.sourceFile.getName());
+        }
+        else if (this.isJavaFile())
+        {
+            if (this.sourceFile.getName().contains(".class"))
+                return;
+
+            System.out.println("Compilation du fichier " + this.sourceFile.getPath());
+            cmd = String.format("javac -parameters %s", this.sourceFile.getPath());
         }
         else
         {
-            fieldName = fieldName.replaceAll("^.+[.]", "");
+            System.out.println("Le fichier que vous avez spécifié n'est pas un .class ou un .java");
+            return;
         }
 
-        return fieldName;
+        try
+        {
+            Process p = Runtime.getRuntime().exec(cmd);
+            p.waitFor();
+        } catch (IOException | InterruptedException e) { e.printStackTrace(); }
     }
 
     private void generateExtends()
@@ -248,16 +268,6 @@ public class UMLGenerator
         }
     }
 
-    private Entity getEntity(String name)
-    {
-        for(Entity entity : this.entities)
-            if(entity.getName().equalsIgnoreCase(name))
-                return entity;
-
-        return null;
-    }
-
-
     private List<String> getFilesGenerate()
     {
         List<String> filesGenerate = new ArrayList<>();
@@ -295,7 +305,7 @@ public class UMLGenerator
     public void printRelations()
     {
         for(Relation r : this.relations)
-            System.out.println(r + "\n");
+            if(r.isShow()) System.out.println(r + "\n");
         
         for(RelationAssociationBi r2 : this.relationsAssocBi)
             System.out.println(r2 + "\n");
@@ -324,7 +334,44 @@ public class UMLGenerator
             return;
         }
 
-        UMLGenerator generator = new UMLGenerator(args[0]);
+        String parameters = "";
+
+        if (args.length >= 2)
+            for (int i = 0; i < args.length - 1; i++)
+                parameters += args[i];
+
+        String configFileName = "";
+        String[] paramsArr = parameters.replaceAll(" ", "").split("-");
+
+        if (paramsArr.length > 0)
+        {
+            for(int i = 0; i < paramsArr.length; i++)
+            {
+                if (paramsArr[i].equalsIgnoreCase(""))
+                    continue;
+
+                if (paramsArr[i].contains("config:"))
+                {
+                    String[] config = paramsArr[i].split(":");
+                    configFileName = config[1];
+                }
+                else
+                {
+                    System.out.println("Mauvais usage du parametre " + paramsArr[i]);
+                }
+            }
+        }
+
+        System.out.println("Fichier de configuration : " + (configFileName.equalsIgnoreCase("") ? "Aucun" : configFileName));
+
+        if (!configFileName.equalsIgnoreCase(""))
+            if(!new File(configFileName).exists())
+            {
+                System.out.println("Le fichier de configuration spécifié n'existe pas !");
+                configFileName = "";
+            }
+
+        UMLGenerator generator = new UMLGenerator(args[args.length - 1], configFileName);
         generator.generate();
         generator.printEntities();
         generator.printRelations();

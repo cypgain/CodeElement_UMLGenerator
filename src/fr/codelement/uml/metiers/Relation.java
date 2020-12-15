@@ -4,13 +4,35 @@ public class Relation
 {
     protected Entity entity1;
     protected Entity entity2;
-    private RelationType type;
+    protected RelationType type;
+    protected boolean show;
     
     public Relation(Entity entity1, Entity entity2, RelationType type)
     {
         this.entity1 = entity1;
         this.entity2 = entity2;
         this.type = type;
+        this.show = true;
+    }
+
+    public Entity getEntity1()
+    {
+        return this.entity1;
+    }
+
+    public Entity getEntity2()
+    {
+        return this.entity2;
+    }
+
+    public void setShow(boolean show)
+    {
+        this.show = show;
+    }
+
+    public boolean isShow()
+    {
+        return this.show;
     }
 
     public Entity getEntity1()
@@ -25,7 +47,8 @@ public class Relation
 
     public String toString()
     {
-        return entity1.getName() + " " + (type == RelationType.EXTEND ? "herite de" : "implemente") + " " + entity2.getName();
+        if (!this.show) return "";
+        return this.entity1.getName() + " " + (this.type == RelationType.EXTEND ? "herite de" : "implemente") + " " + this.entity2.getName();
     }
 
 

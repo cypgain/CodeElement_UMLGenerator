@@ -1,0 +1,151 @@
+package fr.codelement.uml;
+
+import fr.codelement.uml.metiers.Entity;
+import fr.codelement.uml.metiers.Member;
+import fr.codelement.uml.metiers.Relation;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Config
+{
+
+    private File file;
+    private UMLGenerator umlGenerator;
+
+    public Config(String configFileName, UMLGenerator umlGenerator)
+    {
+        this.file = new File(configFileName);
+        this.umlGenerator = umlGenerator;
+    }
+
+    public void loadConfig()
+    {
+        System.out.println("Chargement de la configuration");
+
+        try
+        {
+            Scanner sc = new Scanner(new FileInputStream(this.file));
+
+            String line;
+            while (sc.hasNext())
+            {
+                line = sc.nextLine();
+
+                if (line.length() >= 2 && line.trim().startsWith("//"))
+                    continue;
+
+                this.processConfigLine(line);
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    private void processConfigLine(String line)
+    {
+        if (line.length() <= 0)
+            return;
+
+        String[] cmd = line.split(" +");
+
+        String err = "Erreur dans le fichier de configuration pour la ligne '" + line + "'";
+
+        switch (cmd[0])
+        {
+            // Cacher quelque chose
+            case "C":
+                if (cmd.length < 4)
+                {
+                    System.out.println(err);
+                    return;
+                }
+
+                Entity entity = this.umlGenerator.getEntity(cmd[2]);
+
+                if (entity == null)
+                {
+                    System.out.println(err + " : L'entité spécifiée n'existe pas");
+                    return;
+                }
+
+                Member member;
+                switch (cmd[1])
+                {
+                    case "A":
+                        if (cmd[3].equalsIgnoreCase("*"))
+                        {
+                            entity.hideAllAttributes();
+                        }
+                        else
+                        {
+                            member = entity.getMember(cmd[3]);
+                            if (member != null) { member.setShow(false); } else { System.out.println(err + " : Le membre n'existe pas"); }
+                        }
+                        break;
+
+                    case "M":
+                        if (cmd[3].equalsIgnoreCase("*"))
+                        {
+                            entity.hideAllMethods();
+                        }
+                        else
+                        {
+                            member = entity.getMemberBySignature(cmd[3].trim().replaceAll(" ", ""));
+                            if (member != null) { member.setShow(false); } else { System.out.println(err + " : Le membre n'existe pas"); }
+                        }
+                        break;
+
+                    case "R":
+                        Entity entity2 = this.umlGenerator.getEntity(cmd[3]);
+
+                        if (entity2 == null)
+                        {
+                            System.out.println(err + " : l'entité n'existe pas");
+                            return;
+                        }
+
+                        // Suppression de toutes les associations entre les deux entités
+                        if (cmd.length >= 5 && cmd[4].equalsIgnoreCase("*"))
+                        {
+                            Relation relation = this.umlGenerator.getRelation(entity, entity2);
+
+                            while (relation != null)
+                            {
+                                relation.setShow(false);
+                                relation = this.umlGenerator.getRelation(entity, entity2);
+                            }
+                        }
+                        else
+                        {
+                            Relation relation = this.umlGenerator.getRelation(entity, entity2);
+
+                            if (relation == null)
+                            {
+                                System.out.println(err + " : la relation n'existe pas");
+                                return;
+                            }
+
+                            relation.setShow(false);
+                        }
+                        break;
+
+                    default:
+                        System.out.println(err);
+                        break;
+                }
+                break;
+
+            default:
+                System.out.println(err);
+                break;
+        }
+    }
+
+}

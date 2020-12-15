@@ -30,6 +30,10 @@ public class Bateau
 	{
 		this.v = v;
 	}
+	public void setVehicule(Vehicule v, Vehicule veh)
+	{
+		this.v = v;
+	}
 
 	/**
 		* @return Retourne la couleur du véhicule.

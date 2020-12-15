@@ -4,6 +4,8 @@
 	* @version 	: 05/11 - 1.0
 */
 
+import java.util.List;
+
 public class Bateau
 {
 	/*--------------------*/
@@ -25,8 +27,22 @@ public class Bateau
 	{
 		return this.v;
 	}
+	public Vehicule getVehicule(Vehicule[] veh)
+	{
+		return this.v;
+	}
+
+	public Vehicule getVehicule(List<String> veh)
+	{
+		return this.v;
+	}
 
 	public void setVehicule(Vehicule v)
+	{
+		this.v = v;
+	}
+
+	public void setVehicule(Vehicule v, Vehicule veh)
 	{
 		this.v = v;
 	}
