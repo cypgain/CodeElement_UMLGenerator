@@ -78,6 +78,8 @@ public class UMLGenerator
                 // Ajout des attributs
                 for (Field field : cls.getDeclaredFields())
                 {
+                    if (cls.isEnum() && field.getType().getSimpleName().contains(cls.getSimpleName()))
+                        continue;
                     entity.addMember(new MemberAttribute(field.getName(), StringUtils.parseFieldName(field.getGenericType().getTypeName()), field.getModifiers()));
                 }
 
