@@ -21,12 +21,14 @@ public class UMLGenerator
     private File sourceFile;
     private List<Entity> entities;
     private List<Relation> relations;
+    private List<RelationAssociationBi> relationsAssocBi;
 
     public UMLGenerator(String source)
     {
         this.sourceFile = new File(source);
         this.entities = new ArrayList<>();
         this.relations = new ArrayList<>();
+        this.relationsAssocBi = new ArrayList<>();
 
         if (!this.sourceFile.exists())
         {
@@ -216,6 +218,34 @@ public class UMLGenerator
                 }
             }
         }
+        this.assignAssociationBi();
+    }
+
+    public void assignAssociationBi()
+    {
+        ArrayList<Relation> deleteList = new ArrayList<>();
+        for(Relation r : this.relations)
+        {
+            if(!deleteList.contains(r))
+            {
+                for(Relation r2 : this.relations)
+                {
+                    if(r instanceof RelationAssociation && r2 instanceof RelationAssociation)
+                    {
+                        if(r.getEntity1().equals(r2.getEntity2()) && r.getEntity2().equals(r2.getEntity1()))
+                        {
+                            this.relationsAssocBi.add(new RelationAssociationBi((RelationAssociation)r, (RelationAssociation)r2));
+                            deleteList.add(r);
+                            deleteList.add(r2);
+                        }
+                    }
+                }
+            }
+        }
+        for(Relation del : deleteList)
+        {
+            this.relations.remove(del);
+        }
     }
 
     private Entity getEntity(String name)
@@ -266,6 +296,9 @@ public class UMLGenerator
     {
         for(Relation r : this.relations)
             System.out.println(r + "\n");
+        
+        for(RelationAssociationBi r2 : this.relationsAssocBi)
+            System.out.println(r2 + "\n");
     }
 
     private MemberVisibility getMemberVisibility(int modifier)
