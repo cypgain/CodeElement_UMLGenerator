@@ -43,24 +43,5 @@ public abstract class Member
         return this.name;
     }
 
-    public String toString()
-    {
-        return this.toString(25);
-    }
-
-    public String toString(int maxW)
-    {
-        if(!this.show) return "";
-        String str = "";
-
-        str += this.visibility.getSymbol() + " " + this.name;
-        str = String.format("%-" + maxW + "s", str);
-        str += " : " + this.type;
-
-        if (this.isStatic)
-            str = "\033[0;4m" + str +"\033[0m";
-
-        return str;
-    }
-
+    public abstract String toString(int maxWitdh);
 }

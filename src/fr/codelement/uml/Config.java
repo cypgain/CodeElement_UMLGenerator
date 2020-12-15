@@ -2,6 +2,7 @@ package fr.codelement.uml;
 
 import fr.codelement.uml.metiers.Entity;
 import fr.codelement.uml.metiers.Member;
+import fr.codelement.uml.metiers.MemberAttribute;
 import fr.codelement.uml.metiers.Relation;
 import fr.codelement.uml.metiers.RelationAssociationBi;
 
@@ -62,92 +63,113 @@ public class Config
         {
             // Cacher quelque chose
             case "C":
-                if (cmd.length < 4)
+                this.hide(cmd, err);
+                break;
+
+            case "M":
+                this.changeMult(cmd, err);
+                break;
+
+            default:
+                System.out.println(err);
+                break;
+        }
+    }
+
+    private void changeMult(String[] cmd, String err)
+    {
+        if (cmd.length < 4)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        Entity entity = this.umlGenerator.getEntity(cmd[1]);
+        if (entity == null)
+        {
+            System.out.println(err + " : L'entité spécifiée n'existe pas");
+            return;
+        }
+
+        Member member = entity.getMember(cmd[2]);
+        if (member instanceof MemberAttribute) { ((MemberAttribute)member).setMult(cmd[3]); } else { System.out.println(err + " : L'attribut n'existe pas"); }
+    }
+
+    private void hide(String[] cmd, String err)
+    {
+        if (cmd.length < 4)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        Entity entity = this.umlGenerator.getEntity(cmd[2]);
+        if (entity == null)
+        {
+            System.out.println(err + " : L'entité spécifiée n'existe pas");
+            return;
+        }
+
+        Member member;
+
+        switch (cmd[1])
+        {
+            case "A":
+                if (cmd[3].equalsIgnoreCase("*"))
                 {
-                    System.out.println(err);
+                    entity.hideAllAttributes();
+                }
+                else
+                {
+                    member = entity.getMember(cmd[3]);
+                    if (member != null) { member.setShow(false); } else { System.out.println(err + " : Le membre n'existe pas"); }
+                }
+                break;
+
+            case "M":
+                if (cmd[3].equalsIgnoreCase("*"))
+                {
+                    entity.hideAllMethods();
+                }
+                else
+                {
+                    member = entity.getMemberBySignature(cmd[3].trim().replaceAll(" ", ""));
+                    if (member != null) { member.setShow(false); } else { System.out.println(err + " : Le membre n'existe pas"); }
+                }
+                break;
+
+            case "R":
+                Entity entity2 = this.umlGenerator.getEntity(cmd[3]);
+                if (entity2 == null)
+                {
+                    System.out.println(err + " : l'entité n'existe pas");
                     return;
                 }
-
-                Entity entity = this.umlGenerator.getEntity(cmd[2]);
-
-                if (entity == null)
+                // Suppression de toutes les associations entre les deux entités
+                if (cmd.length >= 5 && cmd[4].equalsIgnoreCase("*"))
                 {
-                    System.out.println(err + " : L'entité spécifiée n'existe pas");
-                    return;
+                    Relation relation = this.umlGenerator.getRelation(entity, entity2);
+                    while (relation != null)
+                    {
+                        relation.setShow(false);
+                        relation = this.umlGenerator.getRelation(entity, entity2);
+                    }
                 }
-
-                Member member;
-                switch (cmd[1])
+                else
                 {
-                    case "A":
-                        if (cmd[3].equalsIgnoreCase("*"))
+                    Relation relation = this.umlGenerator.getRelation(entity, entity2);
+                    if (relation == null)
+                    {
+                        RelationAssociationBi assoBi = this.umlGenerator.getAssociationBi(entity, entity2);
+                        if (assoBi == null)
                         {
-                            entity.hideAllAttributes();
-                        }
-                        else
-                        {
-                            member = entity.getMember(cmd[3]);
-                            if (member != null) { member.setShow(false); } else { System.out.println(err + " : Le membre n'existe pas"); }
-                        }
-                        break;
-
-                    case "M":
-                        if (cmd[3].equalsIgnoreCase("*"))
-                        {
-                            entity.hideAllMethods();
-                        }
-                        else
-                        {
-                            member = entity.getMemberBySignature(cmd[3].trim().replaceAll(" ", ""));
-                            if (member != null) { member.setShow(false); } else { System.out.println(err + " : Le membre n'existe pas"); }
-                        }
-                        break;
-
-                    case "R":
-                        Entity entity2 = this.umlGenerator.getEntity(cmd[3]);
-
-                        if (entity2 == null)
-                        {
-                            System.out.println(err + " : l'entité n'existe pas");
+                            System.out.println(err + " : impossible de trouver la relation");
                             return;
                         }
-
-                        // Suppression de toutes les associations entre les deux entités
-                        if (cmd.length >= 5 && cmd[4].equalsIgnoreCase("*"))
-                        {
-                            Relation relation = this.umlGenerator.getRelation(entity, entity2);
-
-                            while (relation != null)
-                            {
-                                relation.setShow(false);
-                                relation = this.umlGenerator.getRelation(entity, entity2);
-                            }
-                        }
-                        else
-                        {
-                            Relation relation = this.umlGenerator.getRelation(entity, entity2);
-
-                            if (relation == null)
-                            {
-                                RelationAssociationBi assoBi = this.umlGenerator.getAssociationBi(entity, entity2);
-
-                                if (assoBi == null)
-                                {
-                                    System.out.println(err + " : impossible de trouver la relation");
-                                    return;
-                                }
-
-                                assoBi.setShow(false);
-                                return;
-                            }
-
-                            relation.setShow(false);
-                        }
-                        break;
-
-                    default:
-                        System.out.println(err);
-                        break;
+                        assoBi.setShow(false);
+                        return;
+                    }
+                    relation.setShow(false);
                 }
                 break;
 
@@ -155,6 +177,7 @@ public class Config
                 System.out.println(err);
                 break;
         }
+                
     }
 
 }
