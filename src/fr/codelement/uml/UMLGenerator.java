@@ -291,7 +291,15 @@ public class UMLGenerator
             return;
         }
 
-        UMLGenerator generator = new UMLGenerator(args[0]);
+        String parameters = "";
+
+        if (args.length >= 2)
+            for (int i = 0; i < args.length - 1; i++)
+                parameters += args[i] + (i != args.length - 2 ? " " : "");
+
+        System.out.println(parameters);
+
+        UMLGenerator generator = new UMLGenerator(args[args.length - 1]);
         generator.generate();
         generator.printEntities();
         generator.printRelations();
