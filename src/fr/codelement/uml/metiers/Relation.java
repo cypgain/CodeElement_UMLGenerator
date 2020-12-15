@@ -35,6 +35,16 @@ public class Relation
         return this.show;
     }
 
+    public Entity getEntity1()
+    {
+        return this.entity1;
+    }
+
+    public Entity getEntity2()
+    {
+        return this.entity2;
+    }
+
     public String toString()
     {
         if (!this.show) return "";

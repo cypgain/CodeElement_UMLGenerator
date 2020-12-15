@@ -18,6 +18,9 @@ public class Vehicule
 	public static final String couleurTest = "e";
 	private static final String couleurTest1 = "e";
 	protected static final String couleurTest2 = "e";
+	private Bateau b;
+	private Vehicule v;
+	private Vehicule[] vT;
 
 	private Voiture[] testTab;
 	private List<Voiture> testList;

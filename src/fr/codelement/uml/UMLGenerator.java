@@ -23,12 +23,14 @@ public class UMLGenerator
     private List<Entity> entities;
     private List<Relation> relations;
     private Config config;
+    private List<RelationAssociationBi> relationsAssocBi;
 
     public UMLGenerator(String source, String configFileName)
     {
         this.sourceFile = new File(source);
         this.entities = new ArrayList<>();
         this.relations = new ArrayList<>();
+        this.relationsAssocBi = new ArrayList<>();
 
         if (!configFileName.equalsIgnoreCase(""))
             this.config = new Config(configFileName, this);
@@ -236,6 +238,34 @@ public class UMLGenerator
                 }
             }
         }
+        this.assignAssociationBi();
+    }
+
+    public void assignAssociationBi()
+    {
+        ArrayList<Relation> deleteList = new ArrayList<>();
+        for(Relation r : this.relations)
+        {
+            if(!deleteList.contains(r))
+            {
+                for(Relation r2 : this.relations)
+                {
+                    if(r instanceof RelationAssociation && r2 instanceof RelationAssociation)
+                    {
+                        if(r.getEntity1().equals(r2.getEntity2()) && r.getEntity2().equals(r2.getEntity1()))
+                        {
+                            this.relationsAssocBi.add(new RelationAssociationBi((RelationAssociation)r, (RelationAssociation)r2));
+                            deleteList.add(r);
+                            deleteList.add(r2);
+                        }
+                    }
+                }
+            }
+        }
+        for(Relation del : deleteList)
+        {
+            this.relations.remove(del);
+        }
     }
 
     private List<String> getFilesGenerate()
@@ -264,6 +294,21 @@ public class UMLGenerator
         }
 
         return filesGenerate;
+    }
+
+    public void printEntities()
+    {
+        for (Entity e : this.entities)
+            System.out.println(e);
+    }
+
+    public void printRelations()
+    {
+        for(Relation r : this.relations)
+            if(r.isShow()) System.out.println(r + "\n");
+        
+        for(RelationAssociationBi r2 : this.relationsAssocBi)
+            System.out.println(r2 + "\n");
     }
 
     private MemberVisibility getMemberVisibility(int modifier)

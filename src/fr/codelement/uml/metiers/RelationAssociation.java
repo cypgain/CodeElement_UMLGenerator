@@ -12,6 +12,16 @@ public class RelationAssociation extends Relation
         this.cardMax = cardMax;
     }
 
+    public char getCardMin() 
+    {
+        return cardMin;
+    }
+
+    public char getCardMax() 
+    {
+        return cardMax;
+    }
+
     @Override
     public String toString()
     {
