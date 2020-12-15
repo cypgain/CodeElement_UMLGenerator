@@ -34,26 +34,47 @@ public class MemberMethod extends Member
         return visibility == 1 ? MemberVisibility.PUBLIC : visibility == 2 ? MemberVisibility.PRIVATE : MemberVisibility.PROTECTED;
     }
 
-    public String toString()
+    @Override
+    public int getWitdh()
     {
-        if(!this.show)return "";
+        if(!this.show)return 0;
         String str = "";
 
-        if (this.isStatic)
-            str += "\033[0;4m";
-
         str += this.visibility.getSymbol() + " ";
-        str += String.format("%-15s", this.name);
-        str += "(";
+        str += this.name + " (";
 
         for (Parameter param : this.arguments)
             str += param.getName() + " : " + param.getType().getSimpleName();
 
         str += ")";
+        return str.length();
+    }
+
+    public String toString()
+    {
+        return this.toString(25);
+    }
+
+    public String toString(int maxW)
+    {
+        if(!this.show)return "";
+        String str = "";
+
+        str += this.visibility.getSymbol() + " ";
+
+        str += this.name + " (";
+
+        for (Parameter param : this.arguments)
+            str += param.getName() + " : " + param.getType().getSimpleName();
+
+        str += ")";
+        str = String.format("%-" + maxW + "s", str);
         str += " : " + this.type;
 
+
+        //----------------------
         if (this.isStatic)
-            str += "\033[0m";
+            str = "\033[0;4m" + str +"\033[0m";
 
         return str;
     }

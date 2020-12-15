@@ -265,7 +265,7 @@ public class UMLGenerator
     public void printRelations()
     {
         for(Relation r : this.relations)
-            System.out.println(r);
+            System.out.println(r + "\n");
     }
 
     private MemberVisibility getMemberVisibility(int modifier)
