@@ -61,13 +61,54 @@ public class Config
 
         switch (cmd[0])
         {
-            // Cacher quelque chose
             case "C":
                 this.hide(cmd, err);
                 break;
 
             case "M":
                 this.changeMult(cmd, err);
+                break;
+
+            case "O":
+                this.changeOrder(cmd, err);
+                break;
+
+            default:
+                System.out.println(err);
+                break;
+        }
+    }
+
+    private void changeOrder(String[] cmd, String err)
+    {
+        if (cmd.length < 4)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        switch (cmd[1])
+        {
+            case "E":
+                Entity entity = this.umlGenerator.getEntity(cmd[2]);
+
+                if (entity == null)
+                {
+                    System.out.println(err + " : L'entité spécifiée n'existe pas");
+                    return;
+                }
+
+                entity.setOrder(Integer.parseInt(cmd[3]));
+                break;
+
+            case "R":
+                if (cmd.length < 5)
+                {
+                    System.out.println(err);
+                    return;
+                }
+
+
                 break;
 
             default:

@@ -1,6 +1,6 @@
 package fr.codelement.uml.metiers;
 
-public class Relation 
+public class Relation extends Component
 {
     protected Entity entity1;
     protected Entity entity2;
@@ -40,6 +40,5 @@ public class Relation
         if (!this.show) return "";
         return this.entity1.getName() + " " + (this.type == RelationType.EXTEND ? "herite de" : "implemente") + " " + this.entity2.getName();
     }
-
 
 }
