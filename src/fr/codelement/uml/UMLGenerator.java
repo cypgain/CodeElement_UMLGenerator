@@ -215,30 +215,33 @@ public class UMLGenerator
     {
         for(Entity e : this.entities)
         {
-            for(MemberAttribute m : e.getMemberAttributeList())
+            if(e.getType().equals(EntityType.CLASS))
             {
-                char c = '1';
-                String type;
-                if(m.getType().contains("[]"))
+                for(MemberAttribute m : e.getMemberAttributeList())
                 {
-                    c = '*';
-                    type = m.getType().substring(0, m.getType().indexOf("["));
-                }
-                else if(m.getType().contains("<"))
-                {
-                    c = '*';
-                    type = m.getType().substring(m.getType().indexOf("<")+1, m.getType().length()-1);
-                }
-                else
-                {
-                    type = m.getType();
-                }
-                for(Entity e2 : this.entities)
-                {
-                    if(e2.getName().equals(type))
+                    char c = '1';
+                    String type;
+                    if(m.getType().contains("[]"))
                     {
-                        m.setShow(false);
-                        this.relations.add(new RelationAssociation(e, e2, '0', c));
+                        c = '*';
+                        type = m.getType().substring(0, m.getType().indexOf("["));
+                    }
+                    else if(m.getType().contains("<"))
+                    {
+                        c = '*';
+                        type = m.getType().substring(m.getType().indexOf("<")+1, m.getType().length()-1);
+                    }
+                    else
+                    {
+                        type = m.getType();
+                    }
+                    for(Entity e2 : this.entities)
+                    {
+                        if(e2.getName().equals(type))
+                        {
+                            m.setShow(false);
+                            this.relations.add(new RelationAssociation(e, e2, '0', c));
+                        }
                     }
                 }
             }

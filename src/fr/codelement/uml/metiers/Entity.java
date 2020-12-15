@@ -30,6 +30,11 @@ public class Entity
         this.enumConstantMembers.add(member);
     }
 
+    public EntityType getType()
+    {
+        return this.type;
+    }
+
     public String getSuperClass()
     {
         return this.superClass;
