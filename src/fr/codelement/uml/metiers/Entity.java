@@ -48,6 +48,17 @@ public class Entity
         return res;
     }
 
+    public Member getMember(String name)
+    {
+        for (Member member : this.members)
+        {
+            if (member.getName().equalsIgnoreCase(name))
+                return member;
+        }
+
+        return null;
+    }
+
     public void addMember(Member m)
     {
         this.members.add(m);

@@ -1,5 +1,7 @@
 package fr.codelement.uml.metiers;
 
+import fr.codelement.uml.utils.StringUtils;
+
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +18,6 @@ public class MemberMethod extends Member
         this.arguments = new ArrayList<>();
     }
 
-    public void addArgument(Parameter param)
-    {
-        this.arguments.add(param);
-    }
-
     @Override
     protected boolean isStatic(int visibility)
     {
@@ -34,6 +31,31 @@ public class MemberMethod extends Member
         return visibility == 1 ? MemberVisibility.PUBLIC : visibility == 2 ? MemberVisibility.PRIVATE : MemberVisibility.PROTECTED;
     }
 
+    public String getSignature()
+    {
+        String str = "";
+
+        int i = 0;
+
+        str += this.name;
+        str += "(";
+        for (Parameter arg : this.arguments)
+        {
+            str += StringUtils.parseFieldName(arg.getParameterizedType().getTypeName());
+            if (i + 1 != this.arguments.size())
+                str += ",";
+            i++;
+        }
+        str += ")";
+
+        return str;
+    }
+
+    public void addArgument(Parameter param)
+    {
+        this.arguments.add(param);
+    }
+
     @Override
     public int getWitdh()
     {
@@ -43,8 +65,14 @@ public class MemberMethod extends Member
         str += this.visibility.getSymbol() + " ";
         str += this.name + " (";
 
+        int i = 0;
         for (Parameter param : this.arguments)
-            str += param.getName() + " : " + param.getType().getSimpleName();
+        {
+            str += param.getName() + " : " + StringUtils.parseFieldName(param.getParameterizedType().getTypeName());
+            if (i + 1 != this.arguments.size())
+                str += ",";
+            i++;
+        }
 
         str += ")";
         return str.length();
@@ -64,8 +92,14 @@ public class MemberMethod extends Member
 
         str += this.name + " (";
 
+        int i = 0;
         for (Parameter param : this.arguments)
-            str += param.getName() + " : " + param.getType().getSimpleName();
+        {
+            str += param.getName() + " : " + StringUtils.parseFieldName(param.getParameterizedType().getTypeName());
+            if (i + 1 != this.arguments.size())
+                str += ", ";
+            i++;
+        }
 
         str += ")";
         str = String.format("%-" + maxW + "s", str);

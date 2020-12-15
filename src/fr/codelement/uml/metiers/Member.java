@@ -38,6 +38,11 @@ public abstract class Member
         return str.length();
     }
 
+    public String getName()
+    {
+        return this.name;
+    }
+
     public String toString()
     {
         return this.toString(25);

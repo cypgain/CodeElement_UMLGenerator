@@ -2,6 +2,7 @@
 
 ./src/fr/codelement/uml/UMLGenerator.java
 ./src/fr/codelement/uml/GenerationType.java
+./src/fr/codelement/uml/Config.java
 
 ./src/fr/codelement/uml/utils/StringUtils.java
 
