@@ -16,3 +16,4 @@
 ./src/fr/codelement/uml/metiers/RelationType.java
 ./src/fr/codelement/uml/metiers/RelationAssociation.java
 ./src/fr/codelement/uml/metiers/RelationAssociationBi.java
+./src/fr/codelement/uml/metiers/EnumConstantMember.java

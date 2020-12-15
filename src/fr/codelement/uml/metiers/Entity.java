@@ -137,8 +137,8 @@ public class Entity
         for (Member m : this.members)
         {
             if (m instanceof MemberAttribute)
-                if(!(m.toString().isEmpty()))
-                    str += m.toString(maxWitdh) + "\n";
+                if(!(((MemberAttribute)m).toString().equals("")))
+                    str += ((MemberAttribute)m).toString(maxWitdh) + "\n";
         }
         str += sep;
         for (EnumConstantMember m : this.enumConstantMembers)
