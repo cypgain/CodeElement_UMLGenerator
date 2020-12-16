@@ -8,6 +8,7 @@ public abstract class Member
     protected MemberVisibility visibility;
     protected boolean isStatic;
     protected boolean show;
+    protected String property;
 
     public Member(String name, String type, int visibility)
     {
@@ -16,6 +17,7 @@ public abstract class Member
         this.isStatic = this.isStatic(visibility);
         this.visibility = this.getMemberVisibility(visibility);
         this.show = true;
+        this.property = "";
     }
 
     protected abstract boolean isStatic(int visibility);
@@ -24,6 +26,21 @@ public abstract class Member
     public String getType()
     {
         return this.type;
+    }
+
+    public void addProperty(String name)
+    {
+        this.property = name;
+    }
+
+    public void removeProperty()
+    {
+        this.property = "";
+    }
+
+    public String getProperty()
+    {
+        return this.property;
     }
 
     public void setShow(boolean b)
@@ -47,6 +64,8 @@ public abstract class Member
         String str = this.visibility.getSymbol() + " " + this.name;
         return str.length();
     }
+
+    public abstract int getTypeWidth();
 
     public abstract String toString(int maxWitdh, int maxTypeWidth);
 

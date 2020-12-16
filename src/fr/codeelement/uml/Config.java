@@ -40,6 +40,10 @@ public class Config
                 this.changeMult(cmd, err);
                 break;
 
+            case "PROPRIETE":
+                this.changerProp(cmd, err);
+                break;
+
             case "ORDRE":
                 this.changeOrder(cmd, err);
                 break;
@@ -149,6 +153,56 @@ public class Config
 
         MemberAttribute member = entity.getAttribute(cmd[2]);
         if (member != null) { member.setMult(" [" + cmd[3] + "]"); } else { System.out.println(err + " : L'attribut n'existe pas"); }
+    }
+
+    private void changerProp(String[] cmd, String err)
+    {
+        if (cmd.length < 4)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        Entity entity = this.umlGenerator.getEntity(cmd[2]);
+
+        if (entity == null)
+        {
+            System.out.println(err + " : la entité n'existe pas");
+            return;
+        }
+
+        Member member = entity.getAttribute(cmd[3]);
+        if(member == null)
+            member = entity.getMethod(cmd[3]);
+
+        if (member == null)
+        {
+            System.out.println(err + " : le membre n'existe pas");
+            return;
+        }
+
+        switch (cmd[1].toUpperCase())
+        {
+            case "AJOUTER":
+                if (cmd.length < 5)
+                {
+                    System.out.println(err);
+                    return;
+                }
+
+                member.addProperty(" {" + cmd[4] + "}");
+
+                break;
+
+            case "SUPPRIMER":
+                member.removeProperty();
+
+                break;
+
+            default:
+                System.out.println(err);
+                break;
+        }
     }
 
     private void changeOrder(String[] cmd, String err)

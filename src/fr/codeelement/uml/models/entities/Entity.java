@@ -107,15 +107,7 @@ public class Entity extends Component
     private int getMaxMemberTypeStringWidth()
     {
         int res = 0;
-        for (MemberMethod m : this.getMethods())
-        {
-            if (!m.isShow())
-                continue;
-
-            if(m.getType().length() > res) res = m.getType().length();
-        }
-
-        for (MemberAttribute m : this.getAttributes())
+        for (Member m : this.members)
         {
             if (!m.isShow())
                 continue;
