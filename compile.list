@@ -1,0 +1,23 @@
+-encoding utf8
+
+./src/fr/codeelement/uml/UMLGenerator.java
+./src/fr/codeelement/uml/Config.java
+
+./src/fr/codeelement/uml/utils/FileUtils.java
+./src/fr/codeelement/uml/utils/StringUtils.java
+
+./src/fr/codeelement/uml/models/Component.java
+
+./src/fr/codeelement/uml/models/relations/Association.java
+./src/fr/codeelement/uml/models/relations/AssociationBi.java
+./src/fr/codeelement/uml/models/relations/Relation.java
+./src/fr/codeelement/uml/models/relations/RelationType.
+
+./src/fr/codeelement/uml/models/entities/EntityType.java
+./src/fr/codeelement/uml/models/entities/Entity.java
+
+./src/fr/codeelement/uml/models/entities/members/Member.java
+./src/fr/codeelement/uml/models/entities/members/MemberAttribute.java
+./src/fr/codeelement/uml/models/entities/members/MemberEnumConstant.java
+./src/fr/codeelement/uml/models/entities/members/MemberMethod.java
+./src/fr/codeelement/uml/models/entities/members/MemberVisibility.java
