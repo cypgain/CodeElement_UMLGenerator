@@ -3,23 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5422ad44-7fb6-40d4-a23e-f67890cc34ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Bateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Vehicule.class" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Vehicule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Vehicule.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Vehicule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/UMLGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/UMLGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/EntityType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/EntityType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/members/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/members/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/members/MemberAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/members/MemberAttribute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/members/MemberMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/models/entities/members/MemberMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/Bateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/EntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/EntityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/utils/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UMLGenerator0.2/fr/codeelement/uml/utils/StringUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/Vehicule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/Vehicule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.config" beforeDir="false" afterPath="$PROJECT_DIR$/test.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,22 +90,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="721" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608110843017" />
-    <state width="1877" height="241" key="GridCell.Tab.0.bottom" timestamp="1608133296770">
+    <state width="1877" height="488" key="GridCell.Tab.0.bottom" timestamp="1608135333652">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608133296770" />
-    <state width="1877" height="241" key="GridCell.Tab.0.center" timestamp="1608133296770">
+    <state width="1877" height="488" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608135333652" />
+    <state width="1877" height="488" key="GridCell.Tab.0.center" timestamp="1608135333652">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608133296770" />
-    <state width="1877" height="241" key="GridCell.Tab.0.left" timestamp="1608133296769">
+    <state width="1877" height="488" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608135333652" />
+    <state width="1877" height="488" key="GridCell.Tab.0.left" timestamp="1608135333651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608133296769" />
-    <state width="1877" height="241" key="GridCell.Tab.0.right" timestamp="1608133296770">
+    <state width="1877" height="488" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608135333651" />
+    <state width="1877" height="488" key="GridCell.Tab.0.right" timestamp="1608135333652">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608133296770" />
+    <state width="1877" height="488" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608135333652" />
     <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1608114454221">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
