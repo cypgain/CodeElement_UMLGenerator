@@ -1,6 +1,6 @@
 package fr.codelement.uml.metiers;
 
-public class RelationAssociationBi
+public class RelationAssociationBi extends Component
 {
     private RelationAssociation r1;
     private RelationAssociation r2;

@@ -5,7 +5,7 @@ import fr.codelement.uml.utils.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Entity
+public class Entity extends Component
 {
 
     private String name;

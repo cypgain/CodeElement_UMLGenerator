@@ -61,13 +61,74 @@ public class Config
 
         switch (cmd[0])
         {
-            // Cacher quelque chose
             case "C":
                 this.hide(cmd, err);
                 break;
 
             case "M":
                 this.changeMult(cmd, err);
+                break;
+
+            case "O":
+                this.changeOrder(cmd, err);
+                break;
+
+            default:
+                System.out.println(err);
+                break;
+        }
+    }
+
+    private void changeOrder(String[] cmd, String err)
+    {
+        if (cmd.length < 4)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        switch (cmd[1])
+        {
+            case "E":
+                Entity entity = this.umlGenerator.getEntity(cmd[2]);
+
+                if (entity == null)
+                {
+                    System.out.println(err + " : L'entité spécifiée n'existe pas");
+                    return;
+                }
+
+                entity.setOrder(Integer.parseInt(cmd[3]));
+                break;
+
+            case "R":
+                if (cmd.length < 5)
+                {
+                    System.out.println(err);
+                    return;
+                }
+
+                Entity entity1 = this.umlGenerator.getEntity(cmd[2]);
+                Entity entity2 = this.umlGenerator.getEntity(cmd[3]);
+                int order = Integer.parseInt(cmd[4]);
+
+                Relation relation = this.umlGenerator.getRelation(entity1, entity2);
+
+                if (relation == null)
+                {
+                    RelationAssociationBi relationAssociationBi = this.umlGenerator.getAssociationBi(entity1, entity2);
+
+                    if (relationAssociationBi == null)
+                    {
+                        System.out.println(err + " : l'association n'existe pas");
+                        return;
+                    }
+                    
+                    relationAssociationBi.setOrder(order);
+                    return;
+                }
+
+                relation.setOrder(order);
                 break;
 
             default:

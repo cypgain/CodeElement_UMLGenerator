@@ -13,6 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class UMLGenerator
@@ -22,8 +23,9 @@ public class UMLGenerator
     private File sourceFile;
     private List<Entity> entities;
     private List<Relation> relations;
-    private Config config;
     private List<RelationAssociationBi> relationsAssocBi;
+    private List<Component> components;
+    private Config config;
 
     public UMLGenerator(String source, String configFileName)
     {
@@ -31,6 +33,7 @@ public class UMLGenerator
         this.entities = new ArrayList<>();
         this.relations = new ArrayList<>();
         this.relationsAssocBi = new ArrayList<>();
+        this.components = new ArrayList<>();
 
         if (!configFileName.equalsIgnoreCase(""))
             this.config = new Config(configFileName, this);
@@ -69,6 +72,7 @@ public class UMLGenerator
                 EntityType entityType = this.getEntityType(cls);
                 Entity entity = new Entity(cls.getSimpleName(), entityType, entityType == EntityType.CLASS ? cls.getSuperclass().getSimpleName() : "");
 
+                this.components.add(entity);
 
                 for(AnnotatedType inter : cls.getAnnotatedInterfaces())
                 {
@@ -188,7 +192,9 @@ public class UMLGenerator
             Entity e = this.getEntity(entity.getSuperClass());
             if(e != null)
             {
-                this.relations.add(new Relation(entity, e, RelationType.EXTEND));
+                Relation relation = new Relation(entity, e, RelationType.EXTEND);
+                this.components.add(relation);
+                this.relations.add(relation);
                 break;
             }
         }
@@ -207,7 +213,9 @@ public class UMLGenerator
 
                 if(e != null)
                 {
-                    this.relations.add(new Relation(entity, e, RelationType.IMPLEMENT));
+                    Relation relation = new Relation(entity, e, RelationType.IMPLEMENT);
+                    this.components.add(relation);
+                    this.relations.add(relation);
                 }
             }
         }
@@ -242,7 +250,9 @@ public class UMLGenerator
                         if(e2.getName().equals(type))
                         {
                             m.setShow(false);
-                            this.relations.add(new RelationAssociation(e, e2, '0', c));
+                            RelationAssociation relationAssociation = new RelationAssociation(e, e2, '0', c);
+                            this.components.add(relationAssociation);
+                            this.relations.add(relationAssociation);
                         }
                     }
                 }
@@ -264,7 +274,9 @@ public class UMLGenerator
                     {
                         if(r.getEntity1().equals(r2.getEntity2()) && r.getEntity2().equals(r2.getEntity1()))
                         {
-                            this.relationsAssocBi.add(new RelationAssociationBi((RelationAssociation)r, (RelationAssociation)r2));
+                            RelationAssociationBi relationAssociationBi = new RelationAssociationBi((RelationAssociation)r, (RelationAssociation)r2);
+                            this.components.add(relationAssociationBi);
+                            this.relationsAssocBi.add(relationAssociationBi);
                             deleteList.add(r);
                             deleteList.add(r2);
                         }
@@ -274,6 +286,7 @@ public class UMLGenerator
         }
         for(Relation del : deleteList)
         {
+            System.out.println("DELETE " + del.getEntity1().getName() + " " + del.getEntity2().getName());
             this.relations.remove(del);
         }
     }
@@ -306,21 +319,6 @@ public class UMLGenerator
         return filesGenerate;
     }
 
-    public void printEntities()
-    {
-        for (Entity e : this.entities)
-            System.out.println(e);
-    }
-
-    public void printRelations()
-    {
-        for(Relation r : this.relations)
-            if(r.isShow()) System.out.println(r + "\n");
-        
-        for(RelationAssociationBi r2 : this.relationsAssocBi)
-            if(r2.isShow()) System.out.println(r2 + "\n");
-    }
-
     private MemberVisibility getMemberVisibility(int modifier)
     {
         return modifier == 1 ? MemberVisibility.PUBLIC : modifier == 2 ? MemberVisibility.PRIVATE : MemberVisibility.PROTECTED;
@@ -334,6 +332,20 @@ public class UMLGenerator
     private String parseFileName(String fileName)
     {
         return fileName.replaceAll(".java", "").replaceAll(".class", "");
+    }
+
+    public String toString()
+    {
+        String str = "";
+        Collections.sort(this.components);
+        for (Component component : this.components)
+        {
+            String componentString = component.toString();
+            if (!(componentString.isEmpty() || componentString.isBlank()))
+                str += componentString + "\n\n";
+        }
+
+        return str;
     }
 
     public static void main(String[] args)
@@ -383,8 +395,7 @@ public class UMLGenerator
 
         UMLGenerator generator = new UMLGenerator(args[args.length - 1], configFileName);
         generator.generate();
-        generator.printEntities();
-        generator.printRelations();
+        System.out.println(generator.toString());
     }
 
 }
