@@ -78,6 +78,12 @@ public class MemberMethod extends Member
     }
 
     @Override
+    public int getTypeWidth() 
+    {
+        return this.type.length() + this.property.length();
+    }
+
+    @Override
     public String toString(int maxW, int maxTypeWidth)
     {
         if(!this.show)return "";
@@ -98,7 +104,7 @@ public class MemberMethod extends Member
 
         str += ")";
         str = String.format("%-" + maxW + "s", str);
-        str += " : " + String.format("%" + maxTypeWidth + "s", this.type);
+        str += " : " + String.format("%" + maxTypeWidth + "s", this.type + this.property);
 
         if (this.isStatic)
             str = "\033[0;4m" + str +"\033[0m";

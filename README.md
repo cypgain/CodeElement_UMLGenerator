@@ -14,7 +14,7 @@
 ##### Pour éxécuter l'application :  
 
 3. Veuillez-vous rendre dans le répertoire src
-4. Veuillez éxécuter la commande suivante : `java fr.codelement.uml.UMLGenerator`
+4. Veuillez éxécuter la commande suivante : `java fr.codeelement.uml.UMLGenerator`
 
 ##### Pour la documention de l'application :
 

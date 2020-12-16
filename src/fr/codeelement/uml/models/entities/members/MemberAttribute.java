@@ -29,9 +29,10 @@ public class MemberAttribute extends Member
         this.mult = mult;
     }
 
+    @Override
     public int getTypeWidth()
     {
-        return this.mult.length() + this.type.length();
+        return this.mult.length() + this.type.length() + this.property.length();
     }
 
     @Override
@@ -43,7 +44,7 @@ public class MemberAttribute extends Member
         str += this.visibility.getSymbol() + " " + this.name;
 
         str = String.format("%-" + maxW + "s", str);
-        str += " : " + String.format("%" + maxTypeWidth + "s", this.type + this.mult);
+        str += " : " + String.format("%" + maxTypeWidth + "s", this.type + this.mult + this.property);
 
         if (this.isStatic)
             str = "\033[0;4m" + str +"\033[0m";
