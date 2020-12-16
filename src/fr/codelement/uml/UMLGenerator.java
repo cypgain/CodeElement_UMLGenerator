@@ -148,11 +148,6 @@ public class UMLGenerator
         return null;
     }
 
-    private boolean isJavaFile()
-    {
-        return this.sourceFile.getName().contains(".java") || this.sourceFile.getName().contains(".class");
-    }
-
     private void compile()
     {
         String cmd;

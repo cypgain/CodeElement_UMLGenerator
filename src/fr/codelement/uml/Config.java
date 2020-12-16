@@ -175,7 +175,6 @@ public class Config
         }
 
         Member member;
-
         switch (cmd[1])
         {
             case "A":
