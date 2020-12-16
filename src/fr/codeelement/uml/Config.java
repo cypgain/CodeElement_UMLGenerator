@@ -4,6 +4,8 @@ import fr.codeelement.uml.models.entities.Entity;
 import fr.codeelement.uml.models.entities.members.Member;
 import fr.codeelement.uml.models.entities.members.MemberAttribute;
 import fr.codeelement.uml.models.relations.Relation;
+import fr.codeelement.uml.models.relations.Association;
+import fr.codeelement.uml.models.relations.AssociationBi;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,6 +44,10 @@ public class Config
 
             case "PROPRIETE":
                 this.changerProp(cmd, err);
+                break;
+
+            case "COMPOSITION":
+                this.addCompo(cmd, err);
                 break;
 
             case "ORDRE":
@@ -203,6 +209,31 @@ public class Config
                 System.out.println(err);
                 break;
         }
+    }
+
+    private void addCompo(String[] cmd, String err)
+    {
+        if (cmd.length < 2)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        Relation relation = this.umlGenerator.getRelation(Integer.parseInt(cmd[1]));
+
+        if (relation == null)
+        {
+            System.out.println(err + " : la relation n'existe pas");
+            return;
+        }
+
+        if (!(relation instanceof Association) || relation instanceof AssociationBi)
+        {
+            System.out.println(err + " : la relation n'est pas unidirectionnelle");
+            return;
+        }
+
+        ((Association)relation).setCompo(true);
     }
 
     private void changeOrder(String[] cmd, String err)
