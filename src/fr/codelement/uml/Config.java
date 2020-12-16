@@ -59,17 +59,20 @@ public class Config
 
         String err = "Erreur dans le fichier de configuration pour la ligne '" + line + "'";
 
+        // UpperCase pour traiter les eventualités d'erreurs de String, il existe aussi LowerCase ou equalsIgnoreCase (mais faut faire des if)
+        cmd[0] = cmd[0].toUpperCase();
+
         switch (cmd[0])
         {
-            case "C":
+            case "CACHER":
                 this.hide(cmd, err);
                 break;
 
-            case "M":
+            case "MULTIPLICITE":
                 this.changeMult(cmd, err);
                 break;
 
-            case "O":
+            case "ORDRE":
                 this.changeOrder(cmd, err);
                 break;
 
