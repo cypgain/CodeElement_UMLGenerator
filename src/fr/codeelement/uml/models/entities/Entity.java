@@ -7,10 +7,7 @@ import fr.codeelement.uml.models.entities.members.MemberEnumConstant;
 import fr.codeelement.uml.models.entities.members.MemberMethod;
 import fr.codeelement.uml.utils.StringUtils;
 
-import java.lang.reflect.AnnotatedType;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
+import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,7 +81,7 @@ public class Entity extends Component
 
     private EntityType getEntityType(Class<?> entityClass)
     {
-        return entityClass.isInterface() ? EntityType.INTERFACE : entityClass.isEnum() ? EntityType.ENUM : EntityType.CLASS;
+        return entityClass.isInterface() ? EntityType.INTERFACE : Modifier.isAbstract(entityClass.getModifiers()) ? EntityType.ABSTRACT : entityClass.isEnum() ? EntityType.ENUM : EntityType.CLASS;
     }
 
     private int getMaxStringWitdh()

@@ -3,6 +3,7 @@ package fr.codeelement.uml.models.entities;
 public enum EntityType
 {
     CLASS(""),
+    ABSTRACT("{abstract}"),
     INTERFACE("<<interface>>"),
     ENUM("<<enumeration>>");
 
