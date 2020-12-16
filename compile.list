@@ -11,7 +11,7 @@
 ./src/fr/codeelement/uml/models/relations/Association.java
 ./src/fr/codeelement/uml/models/relations/AssociationBi.java
 ./src/fr/codeelement/uml/models/relations/Relation.java
-./src/fr/codeelement/uml/models/relations/RelationType.
+./src/fr/codeelement/uml/models/relations/RelationType.java
 
 ./src/fr/codeelement/uml/models/entities/EntityType.java
 ./src/fr/codeelement/uml/models/entities/Entity.java
