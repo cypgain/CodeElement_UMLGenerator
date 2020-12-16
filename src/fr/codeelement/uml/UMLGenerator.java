@@ -65,7 +65,8 @@ public class UMLGenerator
         this.generateExtends();
         this.generateImplements();
         this.generateAssocations();
-        this.config.loadConfig();
+        if(this.config != null)
+            this.config.loadConfig();
     }
 
     private void generateExtends()
