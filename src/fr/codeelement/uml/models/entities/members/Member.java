@@ -1,5 +1,7 @@
 package fr.codeelement.uml.models.entities.members;
 
+import java.lang.reflect.Modifier;
+
 public abstract class Member
 {
 
@@ -20,7 +22,11 @@ public abstract class Member
         this.property = "";
     }
 
-    protected abstract boolean isStatic(int visibility);
+    protected boolean isStatic(int visibility)
+    {
+        return Modifier.isStatic(visibility);
+    }
+
     protected abstract MemberVisibility getMemberVisibility(int visibility);
 
     public String getType()

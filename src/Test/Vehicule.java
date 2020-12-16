@@ -16,7 +16,7 @@ public class Vehicule
 	private String couleur2; // renseigne sur la couleur d'un vehicule
 	protected String couleur3; // renseigne sur la couleur d'un vehicule
 	public static final String couleurTest = "e";
-	private static final String couleurTest1 = "e";
+	private static String couleurTest1 = "e";
 	protected static final String couleurTest2 = "e";
 	private int test;
 

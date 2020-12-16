@@ -2,6 +2,7 @@ package fr.codeelement.uml.models.entities.members;
 
 import fr.codeelement.uml.utils.StringUtils;
 
+import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +16,11 @@ public class MemberMethod extends Member
     {
         super(name, type, visibility);
         this.arguments = new ArrayList<>();
-    }
 
-    @Override
-    protected boolean isStatic(int visibility)
-    {
-        return (visibility / 8) >= 1;
+        if (Modifier.isAbstract(visibility))
+        {
+            this.addProperty(" {abstrait}");
+        }
     }
 
     @Override

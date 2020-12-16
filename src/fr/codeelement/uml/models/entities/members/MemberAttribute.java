@@ -1,5 +1,7 @@
 package fr.codeelement.uml.models.entities.members;
 
+import java.lang.reflect.Modifier;
+
 public class MemberAttribute extends Member
 {
 
@@ -9,12 +11,11 @@ public class MemberAttribute extends Member
     {
         super(name, type, visibility);
         this.mult = "";
-    }
 
-    @Override
-    protected boolean isStatic(int visibility)
-    {
-        return (visibility / 24) >= 1;
+        if (Modifier.isFinal(visibility))
+        {
+            this.addProperty(" {gele}");
+        }
     }
 
     @Override

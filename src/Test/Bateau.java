@@ -4,7 +4,7 @@
 	* @version 	: 05/11 - 1.0
 */
 
-public class Bateau
+public abstract class Bateau
 {
 	/*--------------------*/
 	/* L'attribut couleur */
@@ -42,4 +42,7 @@ public class Bateau
 	{
 		return this.couleur;
 	}
+
+	public abstract void test();
+
 }
