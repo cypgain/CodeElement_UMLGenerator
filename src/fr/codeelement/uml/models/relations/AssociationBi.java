@@ -1,0 +1,39 @@
+package fr.codeelement.uml.models.relations;
+
+import fr.codeelement.uml.models.entities.Entity;
+
+public class AssociationBi extends Association
+{
+
+    private char cardMin2;
+    private char cardMax2;
+
+    public AssociationBi(Entity entity1, Entity entity2, char cardMin, char cardMax, char cardMin2, char cardMax2)
+    {
+        super(entity1, entity2, cardMin, cardMax);
+        this.cardMin2 = cardMin2;
+        this.cardMax2 = cardMax2;
+    }
+
+    public char getCardMin2()
+    {
+        return this.cardMin2;
+    }
+
+    public char getCardMax2()
+    {
+        return this.cardMax2;
+    }
+
+    public String toString()
+    {
+        if (!this.show) return "";
+        String type = "bidirectionnelle";
+
+        if(entity1.getName().equalsIgnoreCase(entity2.getName()))
+            type = "réflexive";
+
+        return "Association " + this.id + ": " + type + "\n\t" + this.entity1.getName() + " " + this.cardMin2 + ".." + this.cardMax2 + " <-------> " + this.cardMin + ".." + this.cardMax + " " + this.entity2.getName() + "\n";
+    }
+
+}

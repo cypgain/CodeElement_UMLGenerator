@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5422ad44-7fb6-40d4-a23e-f67890cc34ae" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ljPesySIbGgyLaWsEGSUVWTyaq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+  </component>
+  <component name="RunManager">
+    <configuration name="UMLGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.codeelement.uml.UMLGenerator" />
+      <module name="UMLGenerator0.2" />
+      <option name="PROGRAM_PARAMETERS" value="-config:test.config Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.codeelement.uml.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UMLGenerator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5422ad44-7fb6-40d4-a23e-f67890cc34ae" name="Default Changelist" comment="" />
+      <created>1608107625338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608107625338</updated>
+      <workItem from="1608107629527" duration="18934000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608124892937">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608124892937" />
+    <state x="724" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608124834777">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="724" y="311" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608124834777" />
+    <state x="721" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1608110843017">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="721" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608110843017" />
+    <state width="1877" height="251" key="GridCell.Tab.0.bottom" timestamp="1608128587478">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608128587478" />
+    <state width="1877" height="251" key="GridCell.Tab.0.center" timestamp="1608128587477">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="251" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608128587477" />
+    <state width="1877" height="251" key="GridCell.Tab.0.left" timestamp="1608128587477">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="251" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608128587477" />
+    <state width="1877" height="251" key="GridCell.Tab.0.right" timestamp="1608128587478">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="251" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608128587478" />
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1608114454221">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
+    <state width="1877" height="326" key="GridCell.Tab.1.center" timestamp="1608114454221">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
+    <state width="1877" height="326" key="GridCell.Tab.1.left" timestamp="1608114454221">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
+    <state width="1877" height="326" key="GridCell.Tab.1.right" timestamp="1608114454221">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="326" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1608115310990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608115310990" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1608125253740">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608125253740" />
+  </component>
+</project>
