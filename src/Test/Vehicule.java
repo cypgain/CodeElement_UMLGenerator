@@ -42,7 +42,7 @@ public class Vehicule
 	}
 	
 	
-	public void testa()
+	public void testa(int test)
 	{
 
 	}
