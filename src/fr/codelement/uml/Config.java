@@ -108,7 +108,27 @@ public class Config
                     return;
                 }
 
+                Entity entity1 = this.umlGenerator.getEntity(cmd[2]);
+                Entity entity2 = this.umlGenerator.getEntity(cmd[3]);
+                int order = Integer.parseInt(cmd[4]);
 
+                Relation relation = this.umlGenerator.getRelation(entity1, entity2);
+
+                if (relation == null)
+                {
+                    RelationAssociationBi relationAssociationBi = this.umlGenerator.getAssociationBi(entity1, entity2);
+
+                    if (relationAssociationBi == null)
+                    {
+                        System.out.println(err + " : l'association n'existe pas");
+                        return;
+                    }
+                    
+                    relationAssociationBi.setOrder(order);
+                    return;
+                }
+
+                relation.setOrder(order);
                 break;
 
             default:
