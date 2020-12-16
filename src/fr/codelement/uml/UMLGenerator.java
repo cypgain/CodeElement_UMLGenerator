@@ -286,6 +286,7 @@ public class UMLGenerator
         }
         for(Relation del : deleteList)
         {
+            System.out.println("DELETE " + del.getEntity1().getName() + " " + del.getEntity2().getName());
             this.relations.remove(del);
         }
     }

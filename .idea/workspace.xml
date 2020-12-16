@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc0d5acd-e4ac-4115-823c-84ee36c615cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.config" beforeDir="false" afterPath="$PROJECT_DIR$/test.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codelement/uml/UMLGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codelement/uml/UMLGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
     <configuration name="UMLGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.codelement.uml.UMLGenerator" />
       <module name="UMLGenerator0.1" />
-      <option name="PROGRAM_PARAMETERS" value="-config:test.config Test" />
+      <option name="PROGRAM_PARAMETERS" value="Test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="fr.codelement.uml.*" />
@@ -83,7 +82,7 @@
       <workItem from="1607964205817" duration="158000" />
       <workItem from="1608016957895" duration="7479000" />
       <workItem from="1608046546984" duration="263000" />
-      <workItem from="1608104674532" duration="279000" />
+      <workItem from="1608104674532" duration="552000" />
     </task>
     <task id="LOCAL-00001" summary="feat: parameters system">
       <created>1608017840495</created>
@@ -103,10 +102,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="feat: parameters system" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608047945028">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608105226547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608047945028" />
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608105226547" />
     <state x="721" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1608027609027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -119,22 +118,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="527" y="22" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608025706792" />
-    <state width="1877" height="405" key="GridCell.Tab.0.bottom" timestamp="1608104947230">
+    <state width="1877" height="160" key="GridCell.Tab.0.bottom" timestamp="1608105229214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608104947230" />
-    <state width="1877" height="405" key="GridCell.Tab.0.center" timestamp="1608104947230">
+    <state width="1877" height="160" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608105229214" />
+    <state width="1877" height="160" key="GridCell.Tab.0.center" timestamp="1608105229214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608104947230" />
-    <state width="1877" height="405" key="GridCell.Tab.0.left" timestamp="1608104947230">
+    <state width="1877" height="160" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608105229214" />
+    <state width="1877" height="160" key="GridCell.Tab.0.left" timestamp="1608105229214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608104947230" />
-    <state width="1877" height="405" key="GridCell.Tab.0.right" timestamp="1608104947230">
+    <state width="1877" height="160" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608105229214" />
+    <state width="1877" height="160" key="GridCell.Tab.0.right" timestamp="1608105229214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608104947230" />
+    <state width="1877" height="160" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608105229214" />
     <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1608025423466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
