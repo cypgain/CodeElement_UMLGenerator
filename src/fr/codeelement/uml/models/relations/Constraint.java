@@ -18,7 +18,7 @@ public class Constraint
 
         for(Relation r : relationList)
         {
-            r.setConstraint(this);
+            r.addConstraint(this);
         }
     }
 

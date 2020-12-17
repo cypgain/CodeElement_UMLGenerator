@@ -3,25 +3,27 @@ package fr.codeelement.uml.models.relations;
 import fr.codeelement.uml.models.Component;
 import fr.codeelement.uml.models.entities.Entity;
 
+import java.util.ArrayList;
+
 public class Relation extends Component
 {
 
     protected RelationType type;
     protected Entity entity1;
     protected Entity entity2;
-    protected Constraint constraint;
+    protected ArrayList<Constraint> constraint;
 
     public Relation(RelationType type, Entity entity1, Entity entity2)
     {
         this.type = type;
         this.entity1 = entity1;
         this.entity2 = entity2;
-        this.constraint = null;
+        this.constraint = new ArrayList<>();
     }
 
-    public void setConstraint(Constraint c)
+    public void addConstraint(Constraint c)
     {
-        this.constraint = c;
+        this.constraint.add(c);
     }
 
     public RelationType getType()
@@ -44,9 +46,10 @@ public class Relation extends Component
         if (!this.show || this.type == RelationType.ASSOCIATION) return "";
         
         String constraint = "";
-        if (this.constraint != null)
+        if (!this.constraint.isEmpty())
         {
-            constraint = "(" + this.constraint.getId() + ") {" + this.constraint.getName() + "}\n";
+            for(Constraint c : this.constraint)
+                constraint += "(" + c.getId() + ") {" + c.getName() + "}\n";
         }
         
         if (this.type == RelationType.INTERNAL_CLASS) return constraint + this.entity1.getName() + " <+>------------ " + this.entity2.getName() +  " (" + this.id + ")\n";

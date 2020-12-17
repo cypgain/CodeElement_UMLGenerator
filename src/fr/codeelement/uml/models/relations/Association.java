@@ -38,9 +38,10 @@ public class Association extends Relation
         if(!this.show) return "";
 
         String constraint = "";
-        if (this.constraint != null)
+        if (!this.constraint.isEmpty())
         {
-            constraint = "(" + this.constraint.getId() + ") {" + this.constraint.getName() + "}\n";
+            for(Constraint c : this.constraint)
+                constraint += "(" + c.getId() + ") {" + c.getName() + "}\n";
         }
 
         if(this.compo)

@@ -31,9 +31,10 @@ public class AssociationBi extends Association
         String type = "bidirectionnelle";
 
         String constraint = "";
-        if (this.constraint != null)
+        if (!this.constraint.isEmpty())
         {
-            constraint = "(" + this.constraint.getId() + ") {" + this.constraint.getName() + "}\n";
+            for(Constraint c : this.constraint)
+                constraint += "(" + c.getId() + ") {" + c.getName() + "}\n";
         }
 
         if(entity1.getName().equalsIgnoreCase(entity2.getName()))
