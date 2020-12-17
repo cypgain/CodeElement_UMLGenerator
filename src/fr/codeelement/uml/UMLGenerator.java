@@ -82,7 +82,6 @@ public class UMLGenerator
             {
                 Relation relation = new Relation(RelationType.EXTENDS, entity, e);
                 this.components.add(relation);
-                break;
             }
         }
     }

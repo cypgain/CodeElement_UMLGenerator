@@ -4,13 +4,16 @@ import fr.codeelement.uml.models.entities.Entity;
 import fr.codeelement.uml.models.entities.members.Member;
 import fr.codeelement.uml.models.entities.members.MemberAttribute;
 import fr.codeelement.uml.models.relations.Relation;
+import fr.codeelement.uml.models.relations.RelationType;
 import fr.codeelement.uml.models.relations.Association;
 import fr.codeelement.uml.models.relations.AssociationBi;
+import fr.codeelement.uml.models.relations.Constraint;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Config
 {
@@ -248,15 +251,32 @@ public class Config
             return;
         }
 
-        Relation relation = this.umlGenerator.getRelation(Integer.parseInt(cmd[1]));
-
-        if (relation == null)
+        ArrayList<Relation> relationList = new ArrayList<>();
+        for(int i = 2; i < cmd.length; i++)
         {
-            System.out.println(err + " : la relation n'existe pas");
-            return;
+            Relation relation = this.umlGenerator.getRelation(Integer.parseInt(cmd[i]));
+            
+            if (relation == null)
+            {
+                System.out.println(err + " : la relation n'existe pas");
+            }
+            else
+            {
+                relationList.add(relation);
+            }
         }
 
-        relation.setContr(cmd[2]);
+        RelationType type = relationList.get(0).getType();
+        for(Relation r : relationList)
+        {
+            if(!r.getType().equals(type))
+            {
+                System.out.println(err + " : les relations n'ont pas le même type");
+                return;
+            }
+        }
+
+        new Constraint(cmd[1], relationList);
     }
 
     private void changeOrder(String[] cmd, String err)
