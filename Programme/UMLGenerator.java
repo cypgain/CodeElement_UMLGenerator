@@ -1,15 +1,3 @@
-package fr.codeelement.uml;
-
-import fr.codeelement.uml.models.Component;
-import fr.codeelement.uml.models.entities.Entity;
-import fr.codeelement.uml.models.entities.EntityType;
-import fr.codeelement.uml.models.entities.members.MemberAttribute;
-import fr.codeelement.uml.models.relations.Association;
-import fr.codeelement.uml.models.relations.AssociationBi;
-import fr.codeelement.uml.models.relations.Relation;
-import fr.codeelement.uml.models.relations.RelationType;
-import fr.codeelement.uml.utils.FileUtils;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -62,21 +50,19 @@ public class UMLGenerator
         }
         catch (MalformedURLException | ClassNotFoundException e) { e.printStackTrace(); }
 
-
         this.generateExtends();
         this.generateImplements();
         this.generateAssocations();
-        this.generateInternalClassesRelations();
-
         if(this.config != null)
             this.config.loadConfig();
     }
 
     private void generateExtends()
     {
-        for(Entity entity : this.getEntities())
+        List<Entity> entities = this.getEntities();
+        for(Entity entity : entities)
         {
-            if(entity.getSuperClass().isEmpty())
+            if(entity.getSuperClass().equalsIgnoreCase(""))
                 continue;
 
             Entity e = this.getEntity(entity.getSuperClass());
@@ -84,6 +70,7 @@ public class UMLGenerator
             {
                 Relation relation = new Relation(RelationType.EXTENDS, entity, e);
                 this.components.add(relation);
+                break;
             }
         }
     }
@@ -185,23 +172,6 @@ public class UMLGenerator
                 this.components.add(new AssociationBi(a.getEntity1(), a.getEntity2(), '0', '1', '0', '*'));
                 this.components.remove(a);
                 associations.remove(a);
-            }
-        }
-    }
-
-    public void generateInternalClassesRelations()
-    {
-        for (Entity entity : this.getEntities())
-        {
-            Class<?>[] classes = entity.getEntityClass().getDeclaredClasses();
-
-            for (Class<?> cls : classes)
-            {
-                Entity e = this.getEntity(cls.getSimpleName());
-                if (e != null)
-                {
-                    this.components.add(new Relation(RelationType.INTERNAL_CLASS, entity, e));
-                }
             }
         }
     }
