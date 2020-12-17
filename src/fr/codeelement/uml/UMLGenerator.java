@@ -63,6 +63,7 @@ public class UMLGenerator
         }
         catch (MalformedURLException | ClassNotFoundException e) { e.printStackTrace(); }
 
+
         this.generateExtends();
         this.generateImplements();
         this.generateAssocations();
@@ -74,10 +75,9 @@ public class UMLGenerator
 
     private void generateExtends()
     {
-        List<Entity> entities = this.getEntities();
-        for(Entity entity : entities)
+        for(Entity entity : this.getEntities())
         {
-            if(entity.getSuperClass().equalsIgnoreCase(""))
+            if(entity.getSuperClass().isEmpty())
                 continue;
 
             Entity e = this.getEntity(entity.getSuperClass());
@@ -85,7 +85,6 @@ public class UMLGenerator
             {
                 Relation relation = new Relation(RelationType.EXTENDS, entity, e);
                 this.components.add(relation);
-                break;
             }
         }
     }
