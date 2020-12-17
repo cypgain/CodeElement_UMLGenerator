@@ -30,6 +30,7 @@ public class Relation extends Component
     public String toString()
     {
         if (!this.show || this.type == RelationType.ASSOCIATION) return "";
+        if (this.type == RelationType.INTERNAL_CLASS) return this.entity1.getName() + " <+>------------ " + this.entity2.getName() +  " (" + this.id + ")\n";
         return this.entity1.getName() + " " + (this.type == RelationType.EXTENDS ? "herite de" : "implemente") + " " + this.entity2.getName() +  " (" + this.id + ")\n";
     }
 

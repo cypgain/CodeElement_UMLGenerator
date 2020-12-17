@@ -9,6 +9,16 @@ import java.util.List;
 
 public class Vehicule
 {
+	class InternalTest
+	{
+		private int yolo;
+
+		private void ethljg()
+		{
+
+		}
+	}
+
 	/*--------------------*/
 	/* L'attribut couleur */
 	/*--------------------*/

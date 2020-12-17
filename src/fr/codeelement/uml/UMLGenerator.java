@@ -11,6 +11,7 @@ import fr.codeelement.uml.models.relations.RelationType;
 import fr.codeelement.uml.utils.FileUtils;
 
 import java.io.File;
+import java.lang.reflect.Modifier;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -65,6 +66,8 @@ public class UMLGenerator
         this.generateExtends();
         this.generateImplements();
         this.generateAssocations();
+        this.generateInternalClassesRelations();
+
         if(this.config != null)
             this.config.loadConfig();
     }
@@ -184,6 +187,23 @@ public class UMLGenerator
                 this.components.add(new AssociationBi(a.getEntity1(), a.getEntity2(), '0', '1', '0', '*'));
                 this.components.remove(a);
                 associations.remove(a);
+            }
+        }
+    }
+
+    public void generateInternalClassesRelations()
+    {
+        for (Entity entity : this.getEntities())
+        {
+            Class<?>[] classes = entity.getEntityClass().getDeclaredClasses();
+
+            for (Class<?> cls : classes)
+            {
+                Entity e = this.getEntity(cls.getSimpleName());
+                if (e != null)
+                {
+                    this.components.add(new Relation(RelationType.INTERNAL_CLASS, entity, e));
+                }
             }
         }
     }
