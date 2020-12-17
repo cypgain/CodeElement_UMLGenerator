@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class Constraint 
 {
+    private static int idConstraint = 1;
+
     private String name;
     private int id;
     private ArrayList<Relation> relationList;
-    private static int idConstraint = 1;
 
     public Constraint(String name, ArrayList<Relation> relationList)
     {
