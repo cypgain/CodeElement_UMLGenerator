@@ -50,6 +50,10 @@ public class Config
                 this.addCompo(cmd, err);
                 break;
 
+            case "CONTRAINTE":
+                this.addContr(cmd, err);
+                break;
+
             case "ORDRE":
                 this.changeOrder(cmd, err);
                 break;
@@ -234,6 +238,25 @@ public class Config
         }
 
         ((Association)relation).setCompo(true);
+    }
+
+    private void addContr(String[] cmd, String err)
+    {
+        if (cmd.length < 3)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        Relation relation = this.umlGenerator.getRelation(Integer.parseInt(cmd[1]));
+
+        if (relation == null)
+        {
+            System.out.println(err + " : la relation n'existe pas");
+            return;
+        }
+
+        relation.setContr(cmd[2]);
     }
 
     private void changeOrder(String[] cmd, String err)
