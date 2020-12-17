@@ -42,13 +42,14 @@ public class Relation extends Component
     public String toString()
     {
         if (!this.show || this.type == RelationType.ASSOCIATION) return "";
-
+        
         String constraint = "";
         if (this.constraint != null)
         {
             constraint = "(" + this.constraint.getId() + ") {" + this.constraint.getName() + "}\n";
         }
-
+        
+        if (this.type == RelationType.INTERNAL_CLASS) return constraint + this.entity1.getName() + " <+>------------ " + this.entity2.getName() +  " (" + this.id + ")\n";
         return constraint + this.entity1.getName() + " " + (this.type == RelationType.EXTENDS ? "herite de" : "implemente") + " " + this.entity2.getName() +  " (" + this.id + ")\n";
     }
 

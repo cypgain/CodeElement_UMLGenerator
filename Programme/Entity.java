@@ -1,12 +1,3 @@
-package fr.codeelement.uml.models.entities;
-
-import fr.codeelement.uml.models.Component;
-import fr.codeelement.uml.models.entities.members.Member;
-import fr.codeelement.uml.models.entities.members.MemberAttribute;
-import fr.codeelement.uml.models.entities.members.MemberEnumConstant;
-import fr.codeelement.uml.models.entities.members.MemberMethod;
-import fr.codeelement.uml.utils.StringUtils;
-
 import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +9,6 @@ public class Entity extends Component
     private List<MemberEnumConstant> membersEnumConstants;
     private List<String> implement;
 
-    private Class<?> entityClass;
     private String name;
     private EntityType type;
     private String superClass;
@@ -29,7 +19,6 @@ public class Entity extends Component
         this.membersEnumConstants = new ArrayList<>();
         this.implement = new ArrayList<>();
 
-        this.entityClass = entityClass;
         this.name = entityClass.getSimpleName();
         this.type = this.getEntityType(entityClass);
         this.superClass = (type == EntityType.CLASS) ? entityClass.getSuperclass().getSimpleName() : "";
@@ -158,11 +147,6 @@ public class Entity extends Component
         }
 
         return methods;
-    }
-
-    public Class<?> getEntityClass()
-    {
-        return this.entityClass;
     }
 
     public MemberAttribute getAttribute(String name)

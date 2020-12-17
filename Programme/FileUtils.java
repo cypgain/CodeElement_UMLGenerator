@@ -1,5 +1,3 @@
-package fr.codeelement.uml.utils;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +20,7 @@ public class FileUtils
         if (sourceIsFolder)
         {
             System.out.println("Compilation du contenu du dossier " + source.getName());
-            cmd = String.format("javac -encoding utf8 -parameters %s/*.java", source.getName());
+            cmd = String.format("javac -parameters %s/*.java", source.getName());
         }
         else if (FileUtils.isJavaFile(source))
         {
@@ -30,7 +28,7 @@ public class FileUtils
                 return;
 
             System.out.println("Compilation du fichier " + source.getPath());
-            cmd = String.format("javac -encoding utf8 -parameters %s", source.getPath());
+            cmd = String.format("javac -parameters %s", source.getPath());
         }
         else
         {
