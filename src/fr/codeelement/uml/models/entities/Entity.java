@@ -18,6 +18,7 @@ public class Entity extends Component
     private List<MemberEnumConstant> membersEnumConstants;
     private List<String> implement;
 
+    private Class<?> entityClass;
     private String name;
     private EntityType type;
     private String superClass;
@@ -28,6 +29,7 @@ public class Entity extends Component
         this.membersEnumConstants = new ArrayList<>();
         this.implement = new ArrayList<>();
 
+        this.entityClass = entityClass;
         this.name = entityClass.getSimpleName();
         this.type = this.getEntityType(entityClass);
         this.superClass = (type == EntityType.CLASS) ? entityClass.getSuperclass().getSimpleName() : "";
@@ -156,6 +158,11 @@ public class Entity extends Component
         }
 
         return methods;
+    }
+
+    public Class<?> getEntityClass()
+    {
+        return this.entityClass;
     }
 
     public MemberAttribute getAttribute(String name)
