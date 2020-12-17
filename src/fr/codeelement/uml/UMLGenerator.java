@@ -323,7 +323,7 @@ public class UMLGenerator
 
         UMLGenerator generator = new UMLGenerator(source, configFileName);
         generator.generate();
-        System.out.println(generator);
+        System.out.println("\n" + generator);
     }
 
 }

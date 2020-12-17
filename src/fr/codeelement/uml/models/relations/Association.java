@@ -36,11 +36,17 @@ public class Association extends Relation
     public String toString()
     {
         if(!this.show) return "";
-        if(this.compo)
+
+        String constraint = "";
+        if (this.constraint != null)
         {
-            return "Association " + this.id + " : composition\n\t" + this.entity2.getName() + " " + this.cardMin + ".." + this.cardMax + " -------<//> 1..1 " + this.entity1.getName() + "\n";
+            constraint = "(" + this.constraint.getId() + ") {" + this.constraint.getName() + "}\n";
         }
-        return "Association " + this.id + " : unidirectionnelle\n\t" + this.entity1.getName() + " 0..* -------> " + this.cardMin + ".." + this.cardMax + " " + this.entity2.getName() + "\n";
+
+        if(this.compo)
+            return constraint + "Association " + this.id + " : composition\n\t" + this.entity2.getName() + " " + this.cardMin + ".." + this.cardMax + " -------<//> 1..1 " + this.entity1.getName() + "\n";
+
+        return constraint + "Association " + this.id + " : unidirectionnelle\n\t" + this.entity1.getName() + " 0..* -------> " + this.cardMin + ".." + this.cardMax + " " + this.entity2.getName() + "\n";
     }
 
 }

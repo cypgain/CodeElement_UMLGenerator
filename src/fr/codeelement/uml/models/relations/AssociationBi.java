@@ -30,10 +30,16 @@ public class AssociationBi extends Association
         if (!this.show) return "";
         String type = "bidirectionnelle";
 
+        String constraint = "";
+        if (this.constraint != null)
+        {
+            constraint = "(" + this.constraint.getId() + ") {" + this.constraint.getName() + "}\n";
+        }
+
         if(entity1.getName().equalsIgnoreCase(entity2.getName()))
             type = "réflexive";
 
-        return "Association " + this.id + " : " + type + "\n\t" + this.entity1.getName() + " " + this.cardMin2 + ".." + this.cardMax2 + " <-------> " + this.cardMin + ".." + this.cardMax + " " + this.entity2.getName() + "\n";
+        return constraint + "Association " + this.id + " : " + type + "\n\t" + this.entity1.getName() + " " + this.cardMin2 + ".." + this.cardMax2 + " <-------> " + this.cardMin + ".." + this.cardMax + " " + this.entity2.getName() + "\n";
     }
 
 }

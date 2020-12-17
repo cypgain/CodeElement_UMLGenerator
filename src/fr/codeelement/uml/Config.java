@@ -4,13 +4,16 @@ import fr.codeelement.uml.models.entities.Entity;
 import fr.codeelement.uml.models.entities.members.Member;
 import fr.codeelement.uml.models.entities.members.MemberAttribute;
 import fr.codeelement.uml.models.relations.Relation;
+import fr.codeelement.uml.models.relations.RelationType;
 import fr.codeelement.uml.models.relations.Association;
 import fr.codeelement.uml.models.relations.AssociationBi;
+import fr.codeelement.uml.models.relations.Constraint;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Config
 {
@@ -48,6 +51,10 @@ public class Config
 
             case "COMPOSITION":
                 this.addCompo(cmd, err);
+                break;
+
+            case "CONTRAINTE":
+                this.addContr(cmd, err);
                 break;
 
             case "ORDRE":
@@ -234,6 +241,42 @@ public class Config
         }
 
         ((Association)relation).setCompo(true);
+    }
+
+    private void addContr(String[] cmd, String err)
+    {
+        if (cmd.length < 3)
+        {
+            System.out.println(err);
+            return;
+        }
+
+        ArrayList<Relation> relationList = new ArrayList<>();
+        for(int i = 2; i < cmd.length; i++)
+        {
+            Relation relation = this.umlGenerator.getRelation(Integer.parseInt(cmd[i]));
+            
+            if (relation == null)
+            {
+                System.out.println(err + " : la relation n'existe pas");
+            }
+            else
+            {
+                relationList.add(relation);
+            }
+        }
+
+        RelationType type = relationList.get(0).getType();
+        for(Relation r : relationList)
+        {
+            if(!r.getType().equals(type))
+            {
+                System.out.println(err + " : les relations n'ont pas le même type");
+                return;
+            }
+        }
+
+        new Constraint(cmd[1], relationList);
     }
 
     private void changeOrder(String[] cmd, String err)
