@@ -15,7 +15,3 @@
 
 3. Veuillez-vous rendre dans le répertoire src
 4. Veuillez éxécuter la commande suivante : `java fr.codeelement.uml.UMLGenerator`
-
-##### Pour la documention de l'application :
-
-5. Pour lire la documention, veuillez taper la commande suivante : javadoc `@javadoc.list`
