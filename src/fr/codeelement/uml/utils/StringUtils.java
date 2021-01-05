@@ -19,6 +19,11 @@ public class StringUtils
         put("boolean", "booléen");
     }};
 
+    /**
+     * Permet de transformer le nom d'un type java en francais
+     * @param type
+     * @return String
+     */
     public static String convertJavaTypeToFrench(String type)
     {
         for(Map.Entry<String, String> entry : StringUtils.JAVA_TYPES.entrySet())
@@ -31,6 +36,11 @@ public class StringUtils
         return type;
     }
 
+    /**
+     * Permet de formatter le nom passer en parametre en retirant le nom des packages
+     * @param fieldName
+     * @return
+     */
     public static String parseFieldName(String fieldName)
     {
         if (fieldName.contains("<"))
@@ -51,11 +61,24 @@ public class StringUtils
         return StringUtils.convertJavaTypeToFrench(fieldName);
     }
 
+    /**
+     * Permet de centrer du texte
+     * @param s
+     * @param size
+     * @return
+     */
     public static String center(String s, int size)
     {
         return StringUtils.center(s, size, ' ');
     }
 
+    /**
+     * Permet de centrer du texte
+     * @param s
+     * @param size
+     * @param pad
+     * @return
+     */
     public static String center(String s, int size, char pad)
     {
         if (s == null || size <= s.length())

@@ -41,6 +41,10 @@ public class Entity extends Component
         this.initImplement(entityClass);
     }
 
+    /**
+     * Permet d'initialiser toutes les arguments de l'entité
+     * @param entityClass
+     */
     private void initArguments(Class<?> entityClass)
     {
         for (Field field : entityClass.getDeclaredFields())
@@ -52,6 +56,10 @@ public class Entity extends Component
         }
     }
 
+    /**
+     * Permet d'initialiser toutes les méthodes de l'entité
+     * @param entityClass
+     */
     private void initMethods(Class<?> entityClass)
     {
         for (Method method : entityClass.getDeclaredMethods())
@@ -64,6 +72,10 @@ public class Entity extends Component
         }
     }
 
+    /**
+     * Permet d'initaliser les constantes d'énumération de l'entité
+     * @param entityClass
+     */
     private void initEnumConstants(Class<?> entityClass)
     {
         if (entityClass.isEnum())
@@ -73,6 +85,10 @@ public class Entity extends Component
         }
     }
 
+    /**
+     * Permet d'initialiser les implementations
+     * @param entityClass
+     */
     private void initImplement(Class<?> entityClass)
     {
         for(AnnotatedType inter : entityClass.getAnnotatedInterfaces())
@@ -81,11 +97,20 @@ public class Entity extends Component
         }
     }
 
+    /**
+     * Recupere le type de l'entité
+     * @param entityClass
+     * @return
+     */
     private EntityType getEntityType(Class<?> entityClass)
     {
         return entityClass.isInterface() ? EntityType.INTERFACE : Modifier.isAbstract(entityClass.getModifiers()) ? EntityType.ABSTRACT : entityClass.isEnum() ? EntityType.ENUM : EntityType.CLASS;
     }
 
+    /**
+     * Recupere la longueur maximal d'une ligne de chaine de caractere de l'entité
+     * @return
+     */
     private int getMaxStringWitdh()
     {
         int res = 0;
@@ -103,6 +128,10 @@ public class Entity extends Component
         return res;
     }
 
+    /**
+     * Recupere la longueur maximale du type des membres
+     * @return
+     */
     private int getMaxMemberTypeStringWidth()
     {
         int res = 0;
@@ -116,6 +145,9 @@ public class Entity extends Component
         return res;
     }
 
+    /**
+     * Cacher tous les attributs
+     */
     public void hideAllAttributes()
     {
         List<MemberAttribute> attributes = this.getAttributes();
@@ -125,6 +157,9 @@ public class Entity extends Component
         }
     }
 
+    /**
+     * Cacher toutes les méthodes
+     */
     public void hideAllMethods()
     {
         List<MemberMethod> methods = this.getMethods();
@@ -134,6 +169,10 @@ public class Entity extends Component
         }
     }
 
+    /**
+     * Recuperer tous les attributs
+     * @return
+     */
     public List<MemberAttribute> getAttributes()
     {
         List<MemberAttribute> attributes = new ArrayList<>();
@@ -147,6 +186,10 @@ public class Entity extends Component
         return attributes;
     }
 
+    /**
+     * Recuperer toutes les méthodes
+     * @return
+     */
     public List<MemberMethod> getMethods()
     {
         List<MemberMethod> methods = new ArrayList<>();
@@ -160,11 +203,20 @@ public class Entity extends Component
         return methods;
     }
 
+    /**
+     * Recupere la classe de l'entité
+     * @return
+     */
     public Class<?> getEntityClass()
     {
         return this.entityClass;
     }
 
+    /**
+     * Recupere l'attribut avec son nom
+     * @param name
+     * @return
+     */
     public MemberAttribute getAttribute(String name)
     {
         List<MemberAttribute> attributes = this.getAttributes();
@@ -176,6 +228,11 @@ public class Entity extends Component
         return null;
     }
 
+    /**
+     * Recuperer une méthode avec sa signature
+     * @param signature
+     * @return
+     */
     public MemberMethod getMethod(String signature)
     {
         List<MemberMethod> methods = this.getMethods();
@@ -187,26 +244,46 @@ public class Entity extends Component
         return null;
     }
 
+    /**
+     * Recuperer le nom de l'entité
+     * @return
+     */
     public String getName()
     {
         return this.name;
     }
 
+    /**
+     * Recupérer le nom de la classe parent
+     * @return
+     */
     public String getSuperClass()
     {
         return this.superClass;
     }
 
+    /**
+     * Recuperer la liste des implementations
+     * @return
+     */
     public List<String> getImplement()
     {
         return this.implement;
     }
 
+    /**
+     * Recuperer le type de l'entité
+     * @return
+     */
     public EntityType getType()
     {
         return this.type;
     }
 
+    /**
+     * Retourne la chaine de caractere de l'entité
+     * @return
+     */
     public String toString()
     {
         int maxWitdh = this.getMaxStringWitdh() + 1;

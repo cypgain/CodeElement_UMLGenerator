@@ -22,11 +22,19 @@ public class Constraint
         }
     }
 
+    /**
+     * Recupere le nom de la contrainte
+     * @return
+     */
     public String getName()
     {
         return this.name;
     }
 
+    /**
+     * Recupere l'id de la contrainte
+     * @return
+     */
     public int getId()
     {
         return this.id;

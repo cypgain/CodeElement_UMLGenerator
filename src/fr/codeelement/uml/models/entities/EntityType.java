@@ -14,6 +14,10 @@ public enum EntityType
         this.label = label;
     }
 
+    /**
+     * Recupere le label du type de l'entité
+     * @return
+     */
     public String getLabel()
     {
         return this.label;

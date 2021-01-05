@@ -15,16 +15,28 @@ public class AssociationBi extends Association
         this.cardMax2 = cardMax2;
     }
 
+    /**
+     * Recupere la cardinalité min 2
+     * @return
+     */
     public char getCardMin2()
     {
         return this.cardMin2;
     }
 
+    /**
+     * Recupere la cardinalité max 2
+     * @return
+     */
     public char getCardMax2()
     {
         return this.cardMax2;
     }
 
+    /**
+     * Retourne une chaine de caractere contenant l'association bidirectionnelle
+     * @return
+     */
     public String toString()
     {
         if (!this.show) return "";

@@ -10,6 +10,10 @@ public class MemberEnumConstant
         this.name = name;
     }
 
+    /**
+     * Recupere de nom de la constante d'enumeration
+     * @return
+     */
     public String getName()
     {
         return this.name;

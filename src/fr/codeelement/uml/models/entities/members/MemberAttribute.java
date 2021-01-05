@@ -18,6 +18,11 @@ public class MemberAttribute extends Member
         }
     }
 
+    /**
+     * Recupere la visibilité du membre
+     * @param visibility
+     * @return
+     */
     @Override
     protected MemberVisibility getMemberVisibility(int visibility)
     {
@@ -25,17 +30,31 @@ public class MemberAttribute extends Member
         return visibility == 1 ? MemberVisibility.PUBLIC : visibility == 2 ? MemberVisibility.PRIVATE : MemberVisibility.PROTECTED;
     }
 
+    /**
+     * Definit la multiplicité
+     * @param mult
+     */
     public void setMult(String mult)
     {
         this.mult = mult;
     }
 
+    /**
+     * Recupere la longueur du type
+     * @return
+     */
     @Override
     public int getTypeWidth()
     {
         return this.mult.length() + this.type.length() + this.property.length();
     }
 
+    /**
+     * Recupere la chaine de caractere de l'attribut
+     * @param maxW
+     * @param maxTypeWidth
+     * @return
+     */
     @Override
     public String toString(int maxW, int maxTypeWidth)
     {
@@ -53,6 +72,10 @@ public class MemberAttribute extends Member
         return str;
     }
 
+    /**
+     * Recupere la chaine de caractere de l'attribut
+     * @return
+     */
     public String toString()
     {
         return this.toString(25, 25);

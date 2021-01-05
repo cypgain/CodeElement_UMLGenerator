@@ -17,22 +17,38 @@ public class Association extends Relation
         this.compo = false;
     }
 
+    /**
+     * Definit si la relation est une composition
+     * @param comp
+     */
     public void setCompo(boolean comp)
     {
         if(!(this instanceof AssociationBi))
             this.compo = comp;
     }
 
+    /**
+     * Recupere la cardinalité min 1
+     * @return
+     */
     public char getCardMin()
     {
         return this.cardMin;
     }
 
+    /**
+     * Recupere la cardinalité max 1
+     * @return
+     */
     public char getCardMax()
     {
         return this.cardMax;
     }
 
+    /**
+     * Recupere une chaine de caractere contenant l'association
+     * @return
+     */
     public String toString()
     {
         if(!this.show) return "";

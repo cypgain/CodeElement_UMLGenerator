@@ -21,26 +21,46 @@ public class Relation extends Component
         this.constraint = new ArrayList<>();
     }
 
+    /**
+     * Ajouter une contrainte à une relation
+     * @param c
+     */
     public void addConstraint(Constraint c)
     {
         this.constraint.add(c);
     }
 
+    /**
+     * Recupere le type de la relation
+     * @return
+     */
     public RelationType getType()
     {
         return this.type;
     }
 
+    /**
+     * Recupere l'entité 1 de la relation
+     * @return
+     */
     public Entity getEntity1()
     {
         return this.entity1;
     }
 
+    /**
+     * Recupere l'entité 2 de la relation
+     * @return
+     */
     public Entity getEntity2()
     {
         return this.entity2;
     }
 
+    /**
+     * Retourne une chaine de caractere de la relation
+     * @return
+     */
     public String toString()
     {
         if (!this.show || this.type == RelationType.ASSOCIATION) return "";

@@ -15,6 +15,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * Classe qui permet de lire des modifications sur le diagramme UML, dans un fichier .config
+ */
 public class Config
 {
 
@@ -27,6 +30,10 @@ public class Config
         this.umlGenerator = umlGenerator;
     }
 
+    /**
+     * Traite la ligne actuelle dans le fichier
+     * @param line
+     */
     private void processConfigLine(String line)
     {
         if (line.length() <= 0)
@@ -67,6 +74,11 @@ public class Config
         }
     }
 
+    /**
+     * Méthode qui permet de cacher un attribut, une méthode ou une relation
+     * @param cmd
+     * @param err
+     */
     private void hide(String[] cmd, String err)
     {
         if (cmd.length < 3)
@@ -149,6 +161,11 @@ public class Config
         }
     }
 
+    /**
+     * Méthode qui permet le changement de multiplicité
+     * @param cmd
+     * @param err
+     */
     private void changeMult(String[] cmd, String err)
     {
         if (cmd.length < 4)
@@ -218,6 +235,11 @@ public class Config
         }
     }
 
+    /**
+     * Méthode permettant l'ajout d'une composition entre 2 entités
+     * @param cmd
+     * @param err
+     */
     private void addCompo(String[] cmd, String err)
     {
         if (cmd.length < 2)
@@ -243,6 +265,11 @@ public class Config
         ((Association)relation).setCompo(true);
     }
 
+    /**
+     * Méthode permettant l'ajout de contraintes
+     * @param cmd
+     * @param err
+     */
     private void addContr(String[] cmd, String err)
     {
         if (cmd.length < 3)
@@ -279,6 +306,11 @@ public class Config
         new Constraint(cmd[1], relationList);
     }
 
+    /**
+     * Méthode permettant de changer l'ordre d'un composant
+     * @param cmd
+     * @param err
+     */
     private void changeOrder(String[] cmd, String err)
     {
         if (cmd.length < 4)
@@ -319,6 +351,9 @@ public class Config
         }
     }
 
+    /**
+     * Méthode permettant la lecture d'un fichier de configuration
+     */
     public void loadConfig()
     {
         System.out.println("Chargement de la configuration");

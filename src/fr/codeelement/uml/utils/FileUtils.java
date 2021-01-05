@@ -10,12 +10,22 @@ import java.util.List;
 public class FileUtils
 {
 
+    /**
+     * Permet de recuperer un fichier en fonction de son nom
+     * @param source
+     * @return
+     */
     public static File getFile(String source)
     {
         File file = new File(source);
         return file.exists() ? file : null;
     }
 
+    /**
+     * Permet de compiler un fichier ou contenu d'un dossier
+     * @param source
+     * @param sourceIsFolder
+     */
     public static void compile(File source, boolean sourceIsFolder)
     {
         String cmd;
@@ -47,6 +57,12 @@ public class FileUtils
         } catch (IOException | InterruptedException e) { e.printStackTrace(); }
     }
 
+    /**
+     * Retourne la liste des fichiers .class
+     * @param source
+     * @param sourceIsFolder
+     * @return
+     */
     public static List<String> getFilesToGenerate(File source, boolean sourceIsFolder)
     {
         List<String> filesGenerate = new ArrayList<>();
@@ -75,11 +91,21 @@ public class FileUtils
         return filesGenerate;
     }
 
+    /**
+     * Permet de formater le nom du fichier
+     * @param fileName
+     * @return
+     */
     public static String parseFileName(String fileName)
     {
         return fileName.replaceAll(".java", "").replaceAll(".class", "");
     }
 
+    /**
+     * Permet de savoir si le fichier est un fichier java
+     * @param source
+     * @return
+     */
     public static boolean isJavaFile(File source)
     {
         return source.getName().contains(".java") || source.getName().contains(".class");

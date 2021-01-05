@@ -18,6 +18,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Classe principale du projet
+ * Elle permet de generer un diagramme UML avec des fichiers passés en parametre
+ */
 public class UMLGenerator
 {
 
@@ -36,6 +40,9 @@ public class UMLGenerator
             this.config = new Config(configFileName, this);
     }
 
+    /**
+     * Permet de generer le diagramme UML
+     */
     public void generate()
     {
         // Compilation du fichier ou du contenu du repertoire source
@@ -72,6 +79,9 @@ public class UMLGenerator
             this.config.loadConfig();
     }
 
+    /**
+     * Permet de generer les héritages du diagramme
+     */
     private void generateExtends()
     {
         for(Entity entity : this.getEntities())
@@ -88,6 +98,9 @@ public class UMLGenerator
         }
     }
 
+    /**
+     * Permet de generer les implementations du diagramme
+     */
     private void generateImplements()
     {
         List<Entity> entities = this.getEntities();
@@ -106,6 +119,9 @@ public class UMLGenerator
         }
     }
 
+    /**
+     * Permet de generer les associations du diagramme
+     */
     private void generateAssocations()
     {
         List<Entity> entities = this.getEntities();
@@ -149,6 +165,9 @@ public class UMLGenerator
         this.groupAssociations();
     }
 
+    /**
+     * Permet de grouper les associations unidirectionnelle en associations bidirectionnelle si c'est possible
+     */
     private void groupAssociations()
     {
         List<Association> associations = this.getAssociations();
@@ -189,7 +208,10 @@ public class UMLGenerator
         }
     }
 
-    public void generateInternalClassesRelations()
+    /**
+     * Generer les classes internes
+     */
+    private void generateInternalClassesRelations()
     {
         for (Entity entity : this.getEntities())
         {
@@ -206,6 +228,10 @@ public class UMLGenerator
         }
     }
 
+    /**
+     * Recupere toutes les entités
+     * @return List<Entity>
+     */
     public List<Entity> getEntities()
     {
         List<Entity> entities = new ArrayList<>();
@@ -219,6 +245,11 @@ public class UMLGenerator
         return entities;
     }
 
+    /**
+     * Recupere une entité à partir de son nom
+     * @param name
+     * @return Entity
+     */
     public Entity getEntity(String name)
     {
         for (Component component : this.components)
@@ -229,6 +260,10 @@ public class UMLGenerator
         return null;
     }
 
+    /**
+     * Recupere toutes les associations
+     * @return List<Association>
+     */
     public List<Association> getAssociations()
     {
         List<Association> associations = new ArrayList<>();
@@ -242,6 +277,11 @@ public class UMLGenerator
         return associations;
     }
 
+    /**
+     * Recupere une relation en fonction de son id
+     * @param id
+     * @return Relation
+     */
     public Relation getRelation(int id)
     {
         for (Component component : this.components)
@@ -252,6 +292,10 @@ public class UMLGenerator
         return null;
     }
 
+    /**
+     * Retourne une chaine de caractere contenant l'affichage du diagramme UML
+     * @return String
+     */
     public String toString()
     {
         String str = "";
@@ -267,6 +311,10 @@ public class UMLGenerator
         return str;
     }
 
+    /**
+     * Méthode principale
+     * @param args
+     */
     public static void main(String[] args)
     {
         if (args.length < 1)

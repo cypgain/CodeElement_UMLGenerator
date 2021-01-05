@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"fr.codeelement.uml"},{"l":"fr.codeelement.uml.models"},{"l":"fr.codeelement.uml.models.entities"},{"l":"fr.codeelement.uml.models.entities.members"},{"l":"fr.codeelement.uml.models.relations"},{"l":"fr.codeelement.uml.utils"}]

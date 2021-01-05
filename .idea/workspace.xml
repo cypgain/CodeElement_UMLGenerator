@@ -2,10 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5422ad44-7fb6-40d4-a23e-f67890cc34ae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/Association.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/AssociationBi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/Component.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/EntityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/FileUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/MemberAttribute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/MemberEnumConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/MemberMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/MemberVisibility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/Relation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/RelationType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/StringUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme/UMLGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Actions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Actions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bateau.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bateau.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Roulant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Roulant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Train.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Train.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Vehicule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Vehicule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Velo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Voiture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Voiture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Volant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Volant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/UMLGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/UMLGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/EntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/EntityType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberEnumConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberEnumConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/entities/members/MemberVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/Association.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/Association.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/AssociationBi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/AssociationBi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/Constraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/Constraint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.config" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.config" beforeDir="false" afterPath="$PROJECT_DIR$/test.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/models/relations/Relation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/codeelement/uml/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/codeelement/uml/utils/StringUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,14 +72,17 @@
   <component name="ProjectId" id="1ljPesySIbGgyLaWsEGSUVWTyaq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
@@ -63,6 +111,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -76,64 +125,11 @@
       <workItem from="1608107629527" duration="18934000" />
       <workItem from="1608129189937" duration="110000" />
       <workItem from="1608198268970" duration="261000" />
+      <workItem from="1609837110207" duration="2288000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608198381028">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608198381028" />
-    <state x="724" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608124834777">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="724" y="311" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608124834777" />
-    <state x="721" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1608110843017">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="721" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608110843017" />
-    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1608198388134">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608198388134" />
-    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1608198388134">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608198388134" />
-    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1608198388134">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608198388134" />
-    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1608198388134">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608198388134" />
-    <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1608114454221">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
-    <state width="1877" height="326" key="GridCell.Tab.1.center" timestamp="1608114454221">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
-    <state width="1877" height="326" key="GridCell.Tab.1.left" timestamp="1608114454221">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
-    <state width="1877" height="326" key="GridCell.Tab.1.right" timestamp="1608114454221">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608114454221" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1608115310990">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608115310990" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1608125253740">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608125253740" />
+    <option name="version" value="3" />
   </component>
 </project>
