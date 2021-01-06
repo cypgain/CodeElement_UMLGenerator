@@ -226,7 +226,6 @@ public class Config
 
             case "SUPPRIMER":
                 member.removeProperty();
-
                 break;
 
             default:

@@ -50,10 +50,11 @@ public class FileUtils
 
         try
         {
-            Process p = Runtime.getRuntime().exec(cmd);
-            BufferedReader br = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            br.lines().forEach(System.out::println);
-            p.waitFor();
+            System.out.println("Cmd: " + cmd);
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", cmd).start().waitFor();
+            else
+                new ProcessBuilder("/bin/bash", "-c", cmd).start().waitFor();
         } catch (IOException | InterruptedException e) { e.printStackTrace(); }
     }
 
